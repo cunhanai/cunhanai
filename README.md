@@ -1,5 +1,5 @@
 <img align="right" width="250px" style="margin-top:-20px" src="https://i.ibb.co/M6kk6VD/avatoon-1-1.png">
-<br><br>
+<br>
 
 # Olá, sou a Ana!
 Tenho 18 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por tecnologia e música, principalmente quando se misturam. Sou Técnica em Informática e estou inciando o primeiro semestre de Ciências da Computação na FURB, também possuo certificação em Java pelo Entra21 e adoro ouvir música enquanto programo!
