@@ -1,7 +1,17 @@
-# Olá, sou a Ana (she/her)
+<img align="right" width="250px" style="margin-top:-20px" src="https://i.ibb.co/M6kk6VD/avatoon-1-1.png">
+<br><br>
+
+# Olá, sou a Ana!
 Tenho 18 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por tecnologia e música, principalmente quando se misturam. Sou Técnica em Informática e estou inciando o primeiro semestre de Ciências da Computação na FURB, também possuo certificação em Java pelo Entra21 e adoro ouvir música enquanto programo!
 
-### Tecnologias e ferramentas
+<div>
+	<a href="https://www.linkedin.com/in/ana-julia-da-cunha" target="_blank"><img align="left" alt="LinkedIn" width="22px" src="https://github.com/Aakarsh-B/trying-repos/blob/master/linkedin.svg" />
+	<a href="https://twitter.com/cunhanai4" target="_blank"><img align="left" alt="Twitter" width="22px" src="https://github.com/Aakarsh-B/trying-repos/blob/master/twitter.svg" />
+</div>
+<br>
+	
+	
+### :computer: Tecnologias e ferramentas
 <div>
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" widht="40" height="40"/>
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" widht="40" height="40"/>
@@ -14,7 +24,7 @@ Tenho 18 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por 
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" widht="40" height="40"/>
 </div>
 
-### Estou aprendendo
+### :iphone: Estou aprendendo
 <div>
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" widht="40" height="40"/>
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" widht="40" height="40"/>
@@ -22,11 +32,15 @@ Tenho 18 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por 
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" widht="40" height="40"/>
 </div>
 
+<br>
 
-<div>
+##
+<img width="300px" align="right" src="https://i.ibb.co/xqw0szv/avatoon-2.png">
+<br><br>
+<div align="center">
 <a href="https://github.com/cunhanai">
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=cunhanai&layout=compact&langs_count=7&theme=dracula"/>
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=cunhanai&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
+	<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=cunhanai&layout=compact&langs_count=7&theme=dracula"/>
+	<img height="180em" src="https://github-readme-stats.vercel.app/api?username=cunhanai&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
 </div>
 
 ![Snake animation](https://github.com/cunhanai/cunhanai/blob/output/github-contribution-grid-snake.svg)
@@ -45,3 +59,4 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
