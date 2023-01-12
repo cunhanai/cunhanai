@@ -51,9 +51,13 @@ Tenho 18 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por 
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" widht="40" height="40"/>
 	<!-- Flutter (from Dart Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" widht="40" height="40"/>
+	<!-- Markdown -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" widht="40" height="40"/>
 </div>
-
 <br>
+
+<!-- Change to English -->
+<p>Don't speak Portuguese? <a href="https://github.com/cunhanai/cunhanai/blob/main/README-en.md">Change to English!</a></p>
 
 <!-- My Avatoon image 2 -->
 ##
