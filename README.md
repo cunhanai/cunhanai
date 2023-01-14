@@ -57,7 +57,7 @@ I'm 18 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with te
 <br>
 
 <!-- Change to Portuguese -->
-<p>Não fala Inglês? <a href="https://github.com/cunhanai/cunhanai#readme">Mude para Português!</a></p>
+<p>Não fala Inglês? <a href="https://github.com/cunhanai/cunhanai/blob/main/README-pt.md">Mude para Português!</a></p>
 
 <!-- My Avatoon image 2 -->
 ##
