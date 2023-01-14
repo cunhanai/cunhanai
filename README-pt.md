@@ -57,7 +57,7 @@ Tenho 18 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por 
 <br>
 
 <!-- Change to English -->
-<p>Don't speak Portuguese? <a href="https://github.com/cunhanai/cunhanai/blob/main/README-en.md">Change to English!</a></p>
+<p>Don't speak Portuguese? <a href="https://github.com/cunhanai/cunhanai/blob/main/README.md">Change to English!</a></p>
 
 <!-- My Avatoon image 2 -->
 ##
