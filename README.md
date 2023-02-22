@@ -52,7 +52,9 @@ I'm 18 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with te
 	<!-- Flutter (from Dart Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" widht="40" height="40"/>
 	<!-- Markdown -->
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" widht="40" height="40"/>
+    	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" widht="40" height="40"/>
+	<!-- C# (Language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" />
 </div>
 <br>
 
