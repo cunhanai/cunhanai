@@ -53,6 +53,8 @@ Tenho 18 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por 
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" widht="40" height="40"/>
 	<!-- Markdown -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" widht="40" height="40"/>
+	<!-- C# (Language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" widht="40" height="40" />
 </div>
 <br>
 
