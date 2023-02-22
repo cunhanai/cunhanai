@@ -54,7 +54,7 @@ I'm 18 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with te
 	<!-- Markdown -->
     	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" widht="40" height="40"/>
 	<!-- C# (Language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" />
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" widht="40" height="40" />
 </div>
 <br>
 
