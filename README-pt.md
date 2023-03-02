@@ -38,6 +38,8 @@ Tenho 18 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por 
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" widht="40" height="40"/>
 	<!-- Bootstrap (style) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" widht="40" height="40"/>
+	<!-- C# (Language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" widht="40" height="40" />
 </div>
 
 <!-- Languages and tools I'm learning -->
@@ -51,10 +53,10 @@ Tenho 18 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por 
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" widht="40" height="40"/>
 	<!-- Flutter (from Dart Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" widht="40" height="40"/>
+	<!-- .NET (language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" widht="40" height="40"/>
 	<!-- Markdown -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" widht="40" height="40"/>
-	<!-- C# (Language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" widht="40" height="40" />
 </div>
 <br>
 
