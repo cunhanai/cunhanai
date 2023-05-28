@@ -18,28 +18,30 @@ I'm 18 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with te
 <!-- Programming languages, tecnologies and tools I know -->
 ### :computer: Tecnologies and Tools
 <div>
-	<!-- Java (Language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" widht="40" height="40"/>
-	<!-- Python (Language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" widht="40" height="40"/>
-	<!-- Javascript (Language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" widht="40" height="40"/>
-	<!-- HTML5 (Mark Language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" widht="40" height="40"/>
-	<!-- Git -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" widht="40" height="40"/>
-	<!-- Spring (with Java) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" widht="40" height="40"/>
-	<!-- MySQL (Database) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" widht="40" height="40"/>
-	<!-- PostgreSQL (Database) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" widht="40" height="40"/>
-	<!-- Selenium (QA) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" widht="40" height="40"/>
-	<!-- Bootstrap (style) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" widht="40" height="40"/>
+	<!-- .NET (language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" widht="40" height="40"/>
 	<!-- C# (Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" widht="40" height="40" />
+	<!-- Javascript (Language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" widht="40" height="40"/>
+	<!-- Java (Language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" widht="40" height="40"/>
+	<!-- Spring (with Java) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" widht="40" height="40"/>
+	<!-- Python (Language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" widht="40" height="40"/>
+	<!-- HTML5 (Mark Language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" widht="40" height="40"/>
+	<!-- Bootstrap (style) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" widht="40" height="40"/>
+	<!-- Git -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" widht="40" height="40"/>
+	<!-- PostgreSQL (Database) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" widht="40" height="40"/>
+	<!-- MySQL (Database) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" widht="40" height="40"/>
+	<!-- Selenium (QA) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" widht="40" height="40"/>
 </div>
 
 <!-- Languages and tools I'm learning -->
@@ -53,8 +55,6 @@ I'm 18 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with te
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" widht="40" height="40"/>
 	<!-- Flutter (from Dart Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" widht="40" height="40"/>
-	<!-- .NET (language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" widht="40" height="40"/>
 	<!-- Markdown -->
     	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" widht="40" height="40"/>
 	
