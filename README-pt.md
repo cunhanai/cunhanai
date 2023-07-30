@@ -4,7 +4,7 @@
 
 <!-- Greetings and tiny description about me -->
 # Olá, sou a Ana!
-Tenho 18 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por tecnologia e música, principalmente quando se misturam. Sou Técnica em Informática e estou inciando o primeiro semestre de Ciências da Computação na FURB, também possuo certificação em Java pelo Entra21 e adoro ouvir música enquanto programo!
+Tenho 19 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por tecnologia e música, principalmente quando se misturam. Sou Programadora Web Full Stack em .NET Framework e Vue.js, Técnica em Informática e estou cursando Ciências da Computação na FURB. Também possuo formação em Java pelo Entra21 e adoro ouvir música enquanto programo!
 
 <!-- My social medias -->
 <div>
@@ -18,28 +18,37 @@ Tenho 18 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por 
 <!-- Programming languages, tecnologies and tools I know -->
 ### :computer: Tecnologias e ferramentas
 <div>
-	<!-- .NET (language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" widht="40" height="40"/>
+	<!-- SERVER SIDE -->
 	<!-- C# (Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" widht="40" height="40" />
-	<!-- Javascript (Language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" widht="40" height="40"/>
+	<!-- .NET (language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" widht="40" height="40"/>
 	<!-- Java (Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" widht="40" height="40"/>
 	<!-- Spring (with Java) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" widht="40" height="40"/>
 	<!-- Python (Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" widht="40" height="40"/>
+ 	<!-- CLIENT SIDE -->
+	<!-- Javascript (Language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" widht="40" height="40"/>
+	<!-- VueJS (language) -->
+	<!-- MARK & STYLE -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" widht="40" height="40"/>
 	<!-- HTML5 (Mark Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" widht="40" height="40"/>
+	<!-- CSS3 (style) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" widht="40" height="40"/>
 	<!-- Bootstrap (style) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" widht="40" height="40"/>
-	<!-- Git -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" widht="40" height="40"/>
+	<!-- DATABASE -->
 	<!-- PostgreSQL (Database) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" widht="40" height="40"/>
 	<!-- MySQL (Database) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" widht="40" height="40"/>
+	<!-- TOOLS -->
+	<!-- Git -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" widht="40" height="40"/>
 	<!-- Selenium (QA) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" widht="40" height="40"/>
 </div>
@@ -49,8 +58,6 @@ Tenho 18 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por 
 <div> 
 	<!-- Pandas (Python library)-->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" widht="40" height="40"/>
-	<!-- CSS3 (style) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" widht="40" height="40"/>
 	<!-- React / React Native (Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" widht="40" height="40"/>
 	<!-- Flutter (from Dart Language) -->
