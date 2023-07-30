@@ -84,4 +84,4 @@ Tenho 19 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por 
 </div>
 
 <!-- Snake commit animation -->
-![Snake animation](https://github.com/cunhanai/cunhanai/blob/output/github-contribution-grid-snake.svg))
+![Snake animation](https://github.com/cunhanai/cunhanai/blob/output/github-contribution-grid-snake.svg)
