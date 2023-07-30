@@ -4,7 +4,7 @@
 
 <!-- Greetings and tiny description about me -->
 # Hello, my name's Ana!
-I'm 18 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with tecnology and music, principally when they're together. I'm a Computer Technician and I'm at the first period of Computer Science. I also have certification in Java by Entra21 (a Brazilian training program) and I love listening to music while coding!
+I'm 19 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with tecnology and music, principally when they're together. I'm a Web Developer Full Stack working with .NET Framework and Vue.js, a Computer Technician and I'm currently studying Computer Science. I also have certification in Java by Entra21 (a Brazilian training program) and I love listening to music while coding!
 
 <!-- My social medias -->
 <div>
@@ -18,28 +18,37 @@ I'm 18 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with te
 <!-- Programming languages, tecnologies and tools I know -->
 ### :computer: Tecnologies and Tools
 <div>
-	<!-- .NET (language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" widht="40" height="40"/>
+	<!-- SERVER SIDE -->
 	<!-- C# (Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" widht="40" height="40" />
-	<!-- Javascript (Language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" widht="40" height="40"/>
+	<!-- .NET (language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" widht="40" height="40"/>
 	<!-- Java (Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" widht="40" height="40"/>
 	<!-- Spring (with Java) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" widht="40" height="40"/>
 	<!-- Python (Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" widht="40" height="40"/>
+ 	<!-- CLIENT SIDE -->
+	<!-- Javascript (Language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" widht="40" height="40"/>
+	<!-- VueJS (language) -->
+	<!-- MARK & STYLE -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" widht="40" height="40"/>
 	<!-- HTML5 (Mark Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" widht="40" height="40"/>
+	<!-- CSS3 (style) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" widht="40" height="40"/>
 	<!-- Bootstrap (style) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" widht="40" height="40"/>
-	<!-- Git -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" widht="40" height="40"/>
+	<!-- DATABASE -->
 	<!-- PostgreSQL (Database) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" widht="40" height="40"/>
 	<!-- MySQL (Database) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" widht="40" height="40"/>
+	<!-- TOOLS -->
+	<!-- Git -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" widht="40" height="40"/>
 	<!-- Selenium (QA) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" widht="40" height="40"/>
 </div>
@@ -49,15 +58,12 @@ I'm 18 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with te
 <div> 
 	<!-- Pandas (Python library)-->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" widht="40" height="40"/>
-	<!-- CSS3 (style) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" widht="40" height="40"/>
 	<!-- React / React Native (Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" widht="40" height="40"/>
 	<!-- Flutter (from Dart Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" widht="40" height="40"/>
 	<!-- Markdown -->
-    	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" widht="40" height="40"/>
-	
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" widht="40" height="40"/>
 </div>
 <br>
 
