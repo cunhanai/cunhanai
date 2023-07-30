@@ -33,8 +33,10 @@ I'm 19 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with te
 	<!-- Javascript (Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" widht="40" height="40"/>
 	<!-- VueJS (language) -->
-	<!-- MARK & STYLE -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" widht="40" height="40"/>
+	<!-- Node.js (language -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" widht="40" height="40"/>
+	<!-- MARK & STYLE -->
 	<!-- HTML5 (Mark Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" widht="40" height="40"/>
 	<!-- CSS3 (style) -->
