@@ -86,4 +86,4 @@ I'm 19 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with te
 </div>
 
 <!-- Snake commit animation -->
-![Snake animation](https://github.com/cunhanai/cunhanai/blob/output/github-contribution-grid-snake.svg)
+<!-- ![Snake animation](https://github.com/cunhanai/cunhanai/blob/output/github-contribution-grid-snake.svg) -->
