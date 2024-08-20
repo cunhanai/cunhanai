@@ -4,7 +4,7 @@
 
 <!-- Greetings and tiny description about me -->
 # Olá, sou a Ana!
-Tenho 19 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por tecnologia e música, principalmente quando se misturam. Sou Programadora Web Full Stack em .NET Framework e Vue.js, Técnica em Informática e estou cursando Ciências da Computação na FURB. Também possuo formação em Java pelo Entra21 e adoro ouvir música enquanto programo!
+Tenho 19 anos, atualmente moro em Blumenau/SC e sou simplesmente APAIXONADA por tecnologia e música, principalmente quando se misturam. Sou Programadora Web Full Stack em .NET Framework Core e Vue.js, Técnica em Informática e estou cursando Ciências da Computação na FURB. Também possuo formação em Java pelo Entra21 e adoro ouvir música enquanto programo!
 
 <!-- My social medias -->
 <div>
