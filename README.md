@@ -11,7 +11,7 @@ I'm 19 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with te
 	<!-- LinkedIn -->
 	<a href="https://www.linkedin.com/in/ana-julia-da-cunha" target="_blank"><img align="left" alt="LinkedIn" width="22px" src="https://github.com/Aakarsh-B/trying-repos/blob/master/linkedin.svg" />
 	<!-- Twitter -->
-	<a href="https://twitter.com/cunhanai4" target="_blank"><img align="left" alt="Twitter" width="22px" src="https://github.com/Aakarsh-B/trying-repos/blob/master/twitter.svg" />
+	<!--<a href="https://twitter.com/cunhanai4" target="_blank"><img align="left" alt="Twitter" width="22px" src="https://github.com/Aakarsh-B/trying-repos/blob/master/twitter.svg" />-->
 </div>
 <br>
 	
