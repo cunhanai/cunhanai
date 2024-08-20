@@ -4,7 +4,7 @@
 
 <!-- Greetings and tiny description about me -->
 # Hello, my name's Ana!
-I'm 19 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with tecnology and music, principally when they're together. I'm a Web Developer Full Stack working with .NET Framework and Vue.js, a Computer Technician and I'm currently studying Computer Science. I also have certification in Java by Entra21 (a Brazilian training program) and I love listening to music while coding!
+I'm 19 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with tecnology and music, principally when they're together. I'm a Web Developer Full Stack working with .NET Framework Core and Vue.js, a Computer Technician and I'm currently studying Computer Science. I also have certification in Java by Entra21 (a Brazilian training program) and I love listening to music while coding!
 
 <!-- My social medias -->
 <div>
