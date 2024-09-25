@@ -58,6 +58,8 @@ I'm 19 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with te
 <!-- Languages and tools I'm learning -->
 ### :iphone: Learning
 <div>
+	<!-- Delphi -->
+	<img src="https://img.icons8.com/color/600/000000/delphi-ide.png" widht="40" height="40"/>
 	<!-- Pandas (Python library)-->
 	<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" widht="40" height="40"/>-->
 	<!-- React / React Native (Language) -->
