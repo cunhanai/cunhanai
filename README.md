@@ -52,20 +52,20 @@ I'm 19 year old, I live in Blumenau (Brazil) and I'm completelly IN LOVE with te
 	<!-- Git -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" widht="40" height="40"/>
 	<!-- Selenium (QA) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" widht="40" height="40"/>
+	<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" widht="40" height="40"/>-->
 </div>
 
 <!-- Languages and tools I'm learning -->
 ### :iphone: Learning
-<div> 
+<div>
 	<!-- Pandas (Python library)-->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" widht="40" height="40"/>
+	<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" widht="40" height="40"/>-->
 	<!-- React / React Native (Language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" widht="40" height="40"/>
+	<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" widht="40" height="40"/>-->
 	<!-- Flutter (from Dart Language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" widht="40" height="40"/>
+	<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" widht="40" height="40"/>-->
 	<!-- Markdown -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" widht="40" height="40"/>
+	<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" widht="40" height="40"/>-->
 </div>
 <br>
 
