@@ -1,9 +1,10 @@
-<!-- My Avatoon image 1 -->
-<img align="right" width="250px" src="https://i.ibb.co/M6kk6VD/avatoon-1-1.png">
 <br>
 
 <!-- Greetings and tiny description about me -->
 # Olá, sou a Ana!
+
+<!-- My Avatoon image 1 -->
+<img align="right" width="250px" src="https://i.ibb.co/M6kk6VD/avatoon-1-1.png">
 
 Tenho 20 anos, atualmente moro em Blumenau/SC. Sou simplesmente APAIXONADA por tecnologia e sou Desenvolvedora Full Stack em .NET Framework, Delphi e um pouco de Python. Minha linguagem principal hoje em dia é o C#, mas estou estudando para mudar para Python.
 
