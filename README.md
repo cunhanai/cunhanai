@@ -1,9 +1,11 @@
-<!-- My Avatoon image 1 -->
-<img align="right" width="250px" src="https://i.ibb.co/M6kk6VD/avatoon-1-1.png">
 <br>
 
 <!-- Greetings and tiny description about me -->
 # Hello, my name's Ana!
+
+<!-- My Avatoon image 1 -->
+<img align="right" width="250px" src="https://i.ibb.co/M6kk6VD/avatoon-1-1.png">
+
 I'm 20 year old, I live in Blumenau (Brazil). I'm completelly IN LOVE with tecnology and I'm a Full Stack Developer who's working with .NET Framework, Delphi and a little bit of Python. My main language nowadays is C#, but I'm studing to change it to Python.
 
 I'm also a Computer Technician, currently studying Computer Science at University of Blumenau and I have certification in Java by Entra21 (a Brazilian training program). 
