@@ -33,11 +33,11 @@ I'm also a Computer Technician, currently studying Computer Science at Universit
 	<!-- .NET Core (language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" widht="auto" height="40"/>
 	<!-- .NET Framework (language) -->
-    	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg" widht="auto" height="40" />
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg" widht="auto" height="40" />
 	<!-- Python (Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" widht="auto" height="40"/>
 	<!-- NumPy (Python library) -->
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" widht="auto" height="40" />
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" widht="auto" height="40" />
 	<!-- Java (Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" widht="auto" height="40"/>
 	<!-- Spring (with Java) -->
@@ -46,10 +46,12 @@ I'm also a Computer Technician, currently studying Computer Science at Universit
  
  ### Client Side
  <div>
-	<!-- Javascript (Language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" widht="auto" height="40"/>
+	<!-- Blazor (Framework) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blazor/blazor-original.svg" widht="auto" height="40"/>
 	<!-- VueJS (language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" widht="auto" height="40"/>
+ 	<!-- Javascript (Language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" widht="auto" height="40"/>
 	<!-- Node.js (language -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" widht="auto" height="40"/>
 	<!-- MARK & STYLE -->
@@ -68,7 +70,9 @@ I'm also a Computer Technician, currently studying Computer Science at Universit
 	<!-- MySQL (Database) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" widht="auto" height="40"/>
 	<!-- SQL Server (Database) -->
-    	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" widht="auto" height="40" />
+	<!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" widht="auto" height="40" /> -->
+	<!-- Oracle (Database) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" widht="auto" height="40"  />
 </div>
 
 ### Version Control
@@ -76,17 +80,17 @@ I'm also a Computer Technician, currently studying Computer Science at Universit
 	<!-- Git -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" widht="auto" height="40"/>
 	<!-- GitHub -->
-    	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" widht="auto" height="40" />
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" widht="auto" height="40" />
 	<!-- GitLab -->
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" widht="auto" height="40" />
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" widht="auto" height="40" />
 	<!-- Azure DevOps -->
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" widht="auto" height="40" />
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" widht="auto" height="40" />
 </div>
 
 ### RPA and Testing
 <div>
 	<!-- PlayWright -->
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg" widht="auto" height="40" />
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg" widht="auto" height="40" />
 	<!-- Selenium (QA) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" widht="auto" height="40"/>
 </div>
@@ -95,7 +99,7 @@ I'm also a Computer Technician, currently studying Computer Science at Universit
 ### :iphone: Learning
 <div>
 	<!-- Delphi -->
-	<img src="https://img.icons8.com/color/600/000000/delphi-ide.png" widht="auto" height="40"/>
+	<!-- <img src="https://img.icons8.com/color/600/000000/delphi-ide.png" widht="auto" height="40"/> -->
 	<!-- Pandas (Python library)-->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" widht="auto" height="40"/>
 	<!-- React / React Native (Language) -->
