@@ -6,7 +6,7 @@
 <!-- My Avatoon image 1 -->
 <img align="right" width="250px" src="https://i.ibb.co/M6kk6VD/avatoon-1-1.png">
 
-Tenho 20 anos, atualmente moro em Blumenau/SC. Sou simplesmente APAIXONADA por tecnologia e sou Desenvolvedora Full Stack em .NET Framework, Delphi e um pouco de Python. Minha linguagem principal hoje em dia é o C#, mas estou estudando para mudar para Python.
+Tenho 21 anos, atualmente moro em Blumenau/SC. Sou simplesmente APAIXONADA por tecnologia e sou Desenvolvedora Full Stack em .NET Framework, Delphi e um pouco de Python. Minha linguagem principal hoje em dia é o C#, mas estou estudando para mudar para Python.
 
 Também sou Técnica em Informática e estou cursando Ciências da Computação na FURB e possuo formação em Java pelo Entra21 e adoro ouvir música enquanto programo!
 
