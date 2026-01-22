@@ -99,16 +99,16 @@ I'm also a Computer Technician, currently studying Computer Science at Universit
 
 <!-- ### :iphone: Learning -->
 <!-- <div> -->
-	<!-- Delphi -->
-	<!-- <img src="https://img.icons8.com/color/600/000000/delphi-ide.png" widht="auto" height="40"/> -->
-	<!-- Pandas (Python library)-->
-	<!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" widht="auto" height="40"/> -->
-	<!-- React / React Native (Language) -->
-	<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" widht="40" height="40"/>-->
-	<!-- Flutter (from Dart Language) -->
-	<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" widht="40" height="40"/>-->
-	<!-- Markdown -->
-	<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" widht="40" height="40"/>-->
+<!-- Delphi -->
+<!-- <img src="https://img.icons8.com/color/600/000000/delphi-ide.png" widht="auto" height="40"/> -->
+<!-- Pandas (Python library) -->
+<!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" widht="auto" height="40"/> -->
+<!-- React / React Native (Language) -->
+<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" widht="40" height="40"/>-->
+<!-- Flutter (from Dart Language) -->
+<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" widht="40" height="40"/>-->
+<!-- Markdown -->
+<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" widht="40" height="40"/>-->
 <!-- </div> -->
 <br>
 
