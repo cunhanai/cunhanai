@@ -34,14 +34,14 @@ I'm also a Computer Technician, currently studying Computer Science at Universit
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" widht="auto" height="40"/>
 	<!-- .NET Framework (language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-original.svg" widht="auto" height="40" />
-	<!-- Python (Language) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" widht="auto" height="40"/>
-	<!-- NumPy (Python library) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" widht="auto" height="40" />
 	<!-- Java (Language) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" widht="auto" height="40"/>
 	<!-- Spring (with Java) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" widht="auto" height="40"/>
+	<!-- Python (Language) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" widht="auto" height="40"/>
+	<!-- NumPy (Python library) -->
+	<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" widht="auto" height="40" />-->
  </div>
  
  ### Client Side
@@ -67,12 +67,12 @@ I'm also a Computer Technician, currently studying Computer Science at Universit
 <div>
 	<!-- PostgreSQL (Database) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" widht="auto" height="40"/>
+	<!-- Oracle (Database) -->
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" widht="auto" height="40"  />
 	<!-- MySQL (Database) -->
 	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" widht="auto" height="40"/>
 	<!-- SQL Server (Database) -->
-	<!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" widht="auto" height="40" /> -->
-	<!-- Oracle (Database) -->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" widht="auto" height="40"  />
+	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" widht="auto" height="40" />
 </div>
 
 ### Version Control
@@ -96,19 +96,20 @@ I'm also a Computer Technician, currently studying Computer Science at Universit
 </div>
 
 <!-- Languages and tools I'm learning -->
-### :iphone: Learning
-<div>
+
+<!-- ### :iphone: Learning -->
+<!-- <div> -->
 	<!-- Delphi -->
 	<!-- <img src="https://img.icons8.com/color/600/000000/delphi-ide.png" widht="auto" height="40"/> -->
 	<!-- Pandas (Python library)-->
-	<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" widht="auto" height="40"/>
+	<!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" widht="auto" height="40"/> -->
 	<!-- React / React Native (Language) -->
 	<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" widht="40" height="40"/>-->
 	<!-- Flutter (from Dart Language) -->
 	<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" widht="40" height="40"/>-->
 	<!-- Markdown -->
 	<!--<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" widht="40" height="40"/>-->
-</div>
+<!-- </div> -->
 <br>
 
 ##
