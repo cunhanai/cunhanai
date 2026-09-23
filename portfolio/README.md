@@ -1,32 +1,74 @@
-# React + TypeScript + Vite
+# Portfólio — Ana Júlia da Cunha
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Implementação em React do design exportado do Claude Design (`Home.dc.html` e `tools.dc.html`).
+Fica separado do README de perfil que está na raiz do repositório.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| O quê | Pacote |
+|---|---|
+| Build | [Vite](https://vite.dev) + React 19 + TypeScript |
+| Estilo | [Tailwind CSS v4](https://tailwindcss.com) — tema em `src/index.css` |
+| Componentes | [neobrutalism.dev](https://www.neobrutalism.dev) (shadcn + Base UI) em `src/components/ui/` |
+| Ícones e cursores | [Font Awesome](https://fontawesome.com) (`@fortawesome/*`) |
+| Animações | [Motion](https://motion.dev) |
+| Rotas | React Router (`/` e `/tools#<ferramenta>`) |
+| Fontes | Playfair Display + Work Sans via `@fontsource` (self-hosted) |
 
-## React Compiler
+## Comandos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev       # http://localhost:5173
+npm run build     # gera dist/ (inclui 404.html para as rotas no GitHub Pages)
+npm run preview
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Estrutura
+
+```
+src/
+  components/ui/       componentes do neobrutalism.dev (ícones trocados de lucide → Font Awesome)
+  components/common/   Container, Reveal, SectionHeading, Grain, ScrollProgress
+  components/layout/   Header, menu mobile (Sheet), seletor de idioma (DropdownMenu)
+  components/home/     seções da Home
+  pages/               Home e Tools
+  tools/               as 8 ferramentas + lógica pura (lib.ts)
+  data/                textos PT/EN e links
+  i18n/                contexto de idioma (salvo em localStorage "ajc-lang")
+  lib/cursors.ts       cursores gerados a partir de fa-arrow-pointer e fa-hand-pointer
+```
+
+### Tema e física neobrutalista
+
+As cores do design viram tokens do Tailwind (`bg-panel`, `text-lilac`, `border-line-2`…).
+A sombra dura e o "botão afundando" do DEPENDENCIES.md viraram utilitários:
+
+- `nb-4`, `nb-6`, `nb-12`… — sombra com offset em px (roxa por padrão)
+- `nb-light` — sombra branca (para fundos roxos)
+- `nb-press` — sobe 2px no hover e afunda exatamente o offset no `:active`
+
+### Componentes do neobrutalism.dev
+
+Foram instalados a partir do registry oficial. Para adicionar mais na sua máquina:
+
+```bash
+npx shadcn@latest add https://neobrutalism.dev/r/<componente>.json
+```
+
+Depois troque o import de `lucide-react` por `@/components/ui/icons` (Font Awesome).
+
+## Deploy (GitHub Pages)
+
+O workflow `.github/workflows/deploy-portfolio.yml` builda esta pasta e publica no Pages a cada push
+na `main` que mexa em `portfolio/` (ou manualmente em *Actions → Run workflow*).
+
+Uma única vez, no GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+O site fica em `https://cunhanai.github.io/cunhanai/`.
+
+## Pendências de conteúdo
+
+- Foto do hero e prints dos projetos (hoje são placeholders listrados)
+- Links de LinkedIn, Lattes e e-mail em `src/data/home.ts` (`LINKS`)
+- Parágrafo "sobre" de exemplo e o hobby em "Estudando agora"
