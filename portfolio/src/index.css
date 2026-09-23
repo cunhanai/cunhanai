@@ -1,0 +1,178 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@import "@fontsource/playfair-display/500.css";
+@import "@fontsource/playfair-display/600.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/playfair-display/500-italic.css";
+@import "@fontsource/work-sans/400.css";
+@import "@fontsource/work-sans/500.css";
+@import "@fontsource/work-sans/600.css";
+@import "@fontsource/work-sans/700.css";
+
+/*
+ * Tema do neobrutalism.dev adaptado para o design: dark, um roxo só,
+ * borda branca de 3px e cantos retos (radius 0).
+ */
+@theme {
+  --color-background: #170d24;
+  --color-secondary-background: #1f1130;
+  --color-foreground: #ffffff;
+  --color-main: #a74de1;
+  --color-main-foreground: #ffffff;
+  --color-border: #ffffff;
+  --color-ring: #ffffff;
+  --color-overlay: rgb(11 5 18 / 0.82);
+
+  /* paleta do design */
+  --color-ink: #170d24;
+  --color-panel: #1f1130;
+  --color-panel-2: #241539;
+  --color-strip: #1c1029;
+  --color-line: #2b1a40;
+  --color-line-2: #43295e;
+  --color-line-3: #4d3268;
+  --color-lilac: #c08cff;
+  --color-lilac-2: #c3a6f0;
+  --color-lilac-3: #a98cd6;
+  --color-muted: #8f74b8;
+  --color-soft: #d8c9ee;
+  --color-soft-2: #e4d8f5;
+  --color-soft-3: #e9e0f7;
+  --color-pink: #ff7ae0;
+  --color-alert: #ff5ec4;
+
+  --font-sans: "Work Sans", system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-weight-base: 500;
+  --font-weight-heading: 700;
+
+  --radius-base: 0px;
+  --shadow-shadow: 4px 4px 0 0 var(--color-main);
+  --spacing-boxShadowX: 4px;
+  --spacing-boxShadowY: 4px;
+  --spacing-reverseBoxShadowX: -4px;
+  --spacing-reverseBoxShadowY: -4px;
+
+  --animate-caret: caret 1s step-end infinite;
+
+  @keyframes caret {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+/*
+ * Física de interação do neobrutalism.dev (ver DEPENDENCIES.md):
+ * sombra dura com offset --nbo; no hover sobe 2px e a sombra cresce 3px;
+ * no :active o elemento desce exatamente o offset e a sombra some.
+ *   nb-4 / nb-6 / nb-12 ... → offset em px
+ *   nb-light               → sombra branca (para fundos roxos)
+ *   nb-press               → ativa hover + active (elementos clicáveis)
+ */
+@utility nb-* {
+  --nbo: calc(--value(integer) * 1px);
+  box-shadow: var(--nbo) var(--nbo) 0 var(--nbc, var(--color-main));
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+@utility nb-light {
+  --nbc: var(--color-border);
+}
+
+@utility nb-press {
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: calc(var(--nbo) + 3px) calc(var(--nbo) + 3px) 0 var(--nbc, var(--color-main));
+  }
+  &:active {
+    transform: translate(var(--nbo), var(--nbo));
+    box-shadow: 0 0 0 var(--nbc, var(--color-main));
+  }
+}
+
+/* Underline que cresce da esquerda nos links da nav */
+@utility nb-link {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 3px;
+    width: 100%;
+    background: var(--color-main);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.26s cubic-bezier(0.2, 0.7, 0.3, 1);
+  }
+  &:hover::after,
+  &:focus-visible::after,
+  &[aria-current="page"]::after {
+    transform: scaleX(1);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    /* cursores gerados a partir dos ícones do Font Awesome (src/lib/cursors.ts) */
+    cursor: var(--cursor-default, auto);
+  }
+  a,
+  button,
+  summary,
+  select,
+  [role="button"],
+  [role="menuitem"],
+  [role="option"] {
+    cursor: var(--cursor-pointer, pointer);
+  }
+  textarea,
+  input {
+    cursor: text;
+  }
+  a {
+    @apply text-lilac no-underline;
+  }
+  :where(a, button, [tabindex]):focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+  }
+  :where(textarea, input, select):focus-visible {
+    outline: 3px solid var(--color-main);
+    outline-offset: 0;
+  }
+  @media (hover: none) {
+    body,
+    a,
+    button,
+    summary,
+    select {
+      cursor: auto;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
