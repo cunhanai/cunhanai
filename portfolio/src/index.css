@@ -47,6 +47,9 @@
   --font-weight-base: 500;
   --font-weight-heading: 700;
 
+  --breakpoint-tab: 620px;
+  --breakpoint-desk: 880px;
+
   --radius-base: 0px;
   --shadow-shadow: 4px 4px 0 0 var(--color-main);
   --spacing-boxShadowX: 4px;
