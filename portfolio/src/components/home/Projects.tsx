@@ -2,7 +2,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faArrowRight, faArrowUpRightFromSquare, faFolderOpen, faXmark } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 
-import { CarouselArrows } from "@/components/common/CarouselArrows"
+import { CarouselArrows, CarouselDots } from "@/components/common/CarouselArrows"
 import { Container } from "@/components/common/Container"
 import { Icon } from "@/components/common/Icon"
 import { Reveal } from "@/components/common/Reveal"
@@ -11,7 +11,6 @@ import { useCarousel } from "@/components/common/useCarousel"
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
 import { HOME, LINKS, type Project } from "@/data/home"
 import { useDict } from "@/i18n/lang"
-import { cn } from "@/lib/utils"
 
 const pad = (n: number) => String(n).padStart(2, "0")
 
@@ -42,7 +41,7 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
       type="button"
       onClick={onOpen}
       aria-haspopup="dialog"
-      className="block h-full w-full border-3 border-white bg-panel text-left font-sans text-white nb-8 nb-press"
+      className="flex h-full w-full flex-col items-stretch justify-start border-3 border-white bg-panel text-left font-sans text-white nb-8 nb-press"
     >
       <div className={`relative flex h-[150px] items-center justify-center border-b-3 border-white ${STRIPES}`}>
         <span className="text-[10px] font-bold tracking-[0.12em] text-lilac-3 uppercase">{project.shot}</span>
@@ -50,13 +49,14 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
           {project.kind}
         </span>
       </div>
-      <div className="p-[18px]">
+      <div className="flex flex-1 flex-col p-[18px]">
         <div className="flex items-baseline justify-between gap-2.5">
           <h3 className="m-0 font-display text-[23px] font-bold tracking-[-0.01em] text-pretty">{project.title}</h3>
           <span className="text-xs font-bold text-main">{project.year}</span>
         </div>
-        <p className="mt-2 text-[15px] leading-[1.55] text-pretty text-soft">{project.desc}</p>
-        <div className="mt-3.5">
+        <p className="mt-2 mb-3.5 text-[15px] leading-[1.55] text-pretty text-soft">{project.desc}</p>
+        {/* mt-auto: em cards de alturas diferentes, o espaço extra fica entre a descrição e as tags */}
+        <div className="mt-auto">
           <Tags tags={project.tags} />
         </div>
         <div className="mt-4 flex items-center gap-2 text-[13px] font-bold text-lilac">
@@ -122,7 +122,7 @@ function ProjectDialog({ project, open, onOpenChange }: { project: Project | nul
                     {project.link.label}
                   </a>
                 )}
-                <DialogClose className="border-3 border-line-2 bg-transparent px-[18px] py-3 text-sm font-bold text-white hover:border-lilac-3">
+                <DialogClose className="flex items-center gap-[9px] border-3 border-white bg-panel px-[18px] py-3 text-sm font-bold text-white nb-5 nb-press">
                   {t.close}
                 </DialogClose>
               </div>
@@ -143,8 +143,6 @@ export function Projects() {
   const arrows = {
     onPrev: () => carousel.go(-1),
     onNext: () => carousel.go(1),
-    canPrev: carousel.canPrev,
-    canNext: carousel.canNext,
     prevLabel: t.prevProject,
     nextLabel: t.nextProject,
     controls: "projects-track",
@@ -156,7 +154,8 @@ export function Projects() {
         <SectionHeading icon={faFolderOpen} num="03" title={t.projectsTitle} />
         <div className="mb-[22px] flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
           <p className="m-0 max-w-[56ch] text-[15px] leading-relaxed text-pretty text-lilac-2">{t.projectsLead}</p>
-          <div className="hidden flex-none items-center gap-3.5 desk:flex">
+          {/* setas sempre acima da linha dos cards */}
+          <div className="ml-auto flex flex-none items-center gap-3.5">
             <span className="font-display text-xl font-bold" aria-live="polite">
               {pad(carousel.index + 1)}
               <span className="text-muted"> / {pad(t.projects.length)}</span>
@@ -195,35 +194,18 @@ export function Projects() {
         </Reveal>
 
         <div className="mt-4 flex items-center justify-between gap-3">
-          <div className="flex gap-2" aria-hidden>
-            {t.projects.map((p, i) => {
-              const on = i >= carousel.index && i < carousel.index + carousel.visible
-              return (
-                <span
-                  key={p.title}
-                  className={cn(
-                    "h-1.5 border-2 transition-all duration-300",
-                    on ? "w-10 border-white bg-main" : "w-[18px] border-line-2 bg-transparent",
-                  )}
-                />
-              )
-            })}
-          </div>
-          <div className="desk:hidden">
-            <CarouselArrows {...arrows} />
-          </div>
+          <CarouselDots count={carousel.count || t.projects.length} index={carousel.index} visible={carousel.visible} />
+          <a
+            href={LINKS.github}
+            target="_blank"
+            rel="noreferrer"
+            className="flex flex-none items-center gap-2.5 border-3 border-white bg-panel px-4 py-2.5 text-sm font-bold text-white nb-5 nb-press"
+          >
+            <Icon icon={faGithub} className="text-lg text-lilac" />
+            {t.allRepos}
+            <Icon icon={faArrowUpRightFromSquare} className="text-[13px]" />
+          </a>
         </div>
-
-        <a
-          href={LINKS.github}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-[22px] inline-flex items-center gap-2.5 border-3 border-white bg-panel px-5 py-[13px] text-sm font-bold text-white nb-5 nb-press"
-        >
-          <Icon icon={faGithub} className="text-lg text-lilac" />
-          {t.allRepos}
-          <Icon icon={faArrowUpRightFromSquare} className="text-[13px]" />
-        </a>
       </Container>
 
       <ProjectDialog

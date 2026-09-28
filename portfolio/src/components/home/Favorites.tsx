@@ -10,7 +10,7 @@ import {
   faTv,
 } from "@fortawesome/free-solid-svg-icons"
 
-import { CarouselArrows } from "@/components/common/CarouselArrows"
+import { CarouselArrows, CarouselDots } from "@/components/common/CarouselArrows"
 import { Icon } from "@/components/common/Icon"
 import { useCarousel } from "@/components/common/useCarousel"
 import { FAVORITES, HOME, type FavoriteKind } from "@/data/home"
@@ -34,7 +34,7 @@ const STRIPES = [
   "bg-[repeating-linear-gradient(45deg,#2d1a45_0_6px,#20122f_6px_12px)]",
 ]
 
-/** Linha de favoritos: mini-carrossel de capas 2:3 com tag de categoria e título. */
+/** Linha de favoritos: mini-carrossel de capas 1:1 com tag de categoria, título e autoria. */
 export function Favorites() {
   const t = useDict(HOME)
   const { lang } = useLang()
@@ -46,14 +46,12 @@ export function Favorites() {
         <div className="flex min-w-0 flex-wrap items-center gap-x-2.5 gap-y-1">
           <Icon icon={faHeart} className="text-main" />
           <h3 className="m-0 text-xs font-bold tracking-[0.14em] text-lilac uppercase">{t.favTitle}</h3>
-          <span className="hidden text-xs text-lilac-3 tab:inline">{t.favSub}</span>
+          <span className="text-xs text-lilac-3">{t.favSub}</span>
         </div>
         <CarouselArrows
           size="sm"
           onPrev={() => carousel.go(-1, 3)}
           onNext={() => carousel.go(1, 3)}
-          canPrev={carousel.canPrev}
-          canNext={carousel.canNext}
           prevLabel={t.prevFavs}
           nextLabel={t.nextFavs}
           controls="favorites-track"
@@ -72,9 +70,9 @@ export function Favorites() {
           return (
           <li
             key={`${f.kind}-${title}`}
-            className="w-[116px] flex-none snap-start border-3 border-white bg-panel nb-4 desk:w-[136px]"
+            className="flex w-[136px] flex-none snap-start flex-col border-3 border-white bg-panel nb-4 desk:w-[160px]"
           >
-            <div className={cn("relative grid aspect-[2/3] place-items-center overflow-hidden border-b-3 border-white", !f.cover && STRIPES[i % 3])}>
+            <div className={cn("relative grid aspect-square place-items-center overflow-hidden border-b-3 border-white", !f.cover && STRIPES[i % 3])}>
               {f.cover ? (
                 <img src={f.cover} alt="" loading="lazy" className="absolute inset-0 size-full object-cover" />
               ) : (
@@ -85,10 +83,10 @@ export function Favorites() {
               </span>
             </div>
             <div className="px-2.5 py-2">
-              <p title={title} className="m-0 truncate text-sm leading-[1.3] font-bold">
+              <p className="m-0 text-sm leading-[1.3] font-bold break-words">
                 {title}
               </p>
-              <p title={f.author} className="m-0 mt-0.5 truncate text-xs leading-[1.3] text-lilac-3">
+              <p className="m-0 mt-1 text-xs leading-[1.3] break-words text-lilac-3">
                 {f.author}
               </p>
             </div>
@@ -96,6 +94,10 @@ export function Favorites() {
           )
         })}
       </ul>
+
+      <div className="mt-1.5">
+        <CarouselDots size="sm" count={carousel.count || FAVORITES.length} index={carousel.index} visible={carousel.visible} />
+      </div>
     </div>
   )
 }
