@@ -69,23 +69,23 @@ export function Favorites() {
         {FAVORITES.map((f, i) => (
           <li
             key={`${f.kind}-${f.title}`}
-            className="w-24 flex-none snap-start border-3 border-white bg-panel nb-4 desk:w-28"
+            className="w-[116px] flex-none snap-start border-3 border-white bg-panel nb-4 desk:w-[136px]"
           >
             <div className={cn("relative grid aspect-[2/3] place-items-center overflow-hidden border-b-3 border-white", !f.cover && STRIPES[i % 3])}>
               {f.cover ? (
                 <img src={f.cover} alt="" loading="lazy" className="absolute inset-0 size-full object-cover" />
               ) : (
-                <Icon icon={KIND_ICONS[f.kind]} className="text-2xl text-line-3" />
+                <Icon icon={KIND_ICONS[f.kind]} className="text-3xl text-line-3" />
               )}
               <span className="absolute top-1.5 left-1.5 border-2 border-line-2 bg-ink px-1.5 py-[3px] text-[9px] leading-none font-bold tracking-[0.08em] text-lilac uppercase">
                 {t.favKinds[f.kind]}
               </span>
             </div>
-            <div className="px-2 py-[7px]">
-              <p title={f.title} className="m-0 truncate text-xs leading-[1.3] font-bold">
+            <div className="px-2.5 py-2">
+              <p title={f.title} className="m-0 truncate text-sm leading-[1.3] font-bold">
                 {f.title}
               </p>
-              <p title={f.author} className="m-0 mt-0.5 truncate text-[11px] leading-[1.3] text-lilac-3">
+              <p title={f.author} className="m-0 mt-0.5 truncate text-xs leading-[1.3] text-lilac-3">
                 {f.author}
               </p>
             </div>
