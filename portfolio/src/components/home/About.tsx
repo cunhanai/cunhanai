@@ -77,6 +77,10 @@ export function About() {
           </div>
         </div>
 
+        <Reveal>
+          <Favorites />
+        </Reveal>
+
         <Reveal className="mt-7 border-3 border-white bg-panel nb-8">
           <div className="flex items-center justify-between gap-3 border-b-3 border-white bg-panel-2 px-4 py-3">
             <span className="flex flex-none items-center gap-[9px] text-xs font-bold tracking-[0.14em] whitespace-nowrap text-lilac uppercase">
@@ -98,10 +102,6 @@ export function About() {
               </div>
             ))}
           </div>
-        </Reveal>
-
-        <Reveal>
-          <Favorites />
         </Reveal>
       </Container>
     </section>

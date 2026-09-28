@@ -95,7 +95,7 @@ export function SiteHeader({
             <SheetContent
               side="top"
               showCloseButton={false}
-              className="z-80 h-dvh gap-0 overflow-auto border-0 bg-ink"
+              className="nb-scroll z-80 h-dvh gap-0 overflow-auto border-0 bg-ink"
             >
               <SheetTitle className="sr-only">{c.menu}</SheetTitle>
               <Container variant={page} className="pt-[22px] pb-10">

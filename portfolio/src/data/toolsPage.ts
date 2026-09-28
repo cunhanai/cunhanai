@@ -30,7 +30,7 @@ export type ToolsDict = {
 
 export const TOOLS_PAGE: Record<Lang, ToolsDict> = {
   pt: {
-    title: "Ferramentas",
+    title: "Toolbox",
     lead: "Oito utilitários para as tarefas chatas do dia. Tudo roda no seu navegador — nada sai do seu computador.",
     input: "Entrada",
     output: "Saída",
@@ -65,7 +65,7 @@ export const TOOLS_PAGE: Record<Lang, ToolsDict> = {
     tsLabels: ["Unix (s)", "Unix (ms)", "ISO 8601", "Hora local", "Relativo"],
   },
   en: {
-    title: "Tools",
+    title: "Toolbox",
     lead: "Eight utilities for the boring parts of the day. Everything runs in your browser — nothing leaves your machine.",
     input: "Input",
     output: "Output",

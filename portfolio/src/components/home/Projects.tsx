@@ -74,7 +74,7 @@ function ProjectDialog({ project, open, onOpenChange }: { project: Project | nul
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="z-90 block max-h-[86vh] w-[calc(100%-36px)] max-w-[620px] gap-0 overflow-auto border-3 border-white bg-panel p-0 text-white shadow-[12px_12px_0_#A74DE1] sm:max-w-[620px] data-open:slide-in-from-bottom-3"
+        className="nb-scroll z-90 block max-h-[86vh] w-[calc(100%-36px)] max-w-[620px] gap-0 overflow-auto border-3 border-white bg-panel p-0 text-white shadow-[12px_12px_0_#A74DE1] sm:max-w-[620px] data-open:slide-in-from-bottom-3"
       >
         {project && (
           <>
@@ -97,7 +97,7 @@ function ProjectDialog({ project, open, onOpenChange }: { project: Project | nul
               <div className={`mt-[18px] flex h-[170px] items-center justify-center border-3 border-white ${STRIPES}`}>
                 <span className="text-[10px] font-bold tracking-[0.12em] text-lilac-3 uppercase">{project.shot}</span>
               </div>
-              <DialogDescription className="mt-5 text-base leading-[1.65] text-pretty text-soft-3">{project.desc}</DialogDescription>
+              <DialogDescription className="mt-5 text-base leading-[1.65] text-pretty text-soft-3">{project.longDesc}</DialogDescription>
               {project.blocks.map((text, i) => (
                 <div key={t.labels[i]} className="mt-[18px]">
                   <div className="flex items-center gap-2 text-[11px] font-bold tracking-[0.12em] text-lilac uppercase">
@@ -111,15 +111,17 @@ function ProjectDialog({ project, open, onOpenChange }: { project: Project | nul
                 <Tags tags={project.tags} size="md" />
               </div>
               <div className="mt-6 flex flex-wrap gap-2.5">
-                <a
-                  href={project.repo ?? LINKS.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-[9px] border-3 border-white bg-main px-[18px] py-3 text-sm font-bold text-white nb-5 nb-light nb-press"
-                >
-                  <Icon icon={faGithub} className="text-lg" />
-                  {t.repo}
-                </a>
+                {project.link && (
+                  <a
+                    href={project.link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-[9px] border-3 border-white bg-main px-[18px] py-3 text-sm font-bold text-white nb-5 nb-light nb-press"
+                  >
+                    <Icon icon={project.link.github ? faGithub : faArrowUpRightFromSquare} className={project.link.github ? "text-lg" : "text-sm"} />
+                    {project.link.label}
+                  </a>
+                )}
                 <DialogClose className="border-3 border-line-2 bg-transparent px-[18px] py-3 text-sm font-bold text-white hover:border-lilac-3">
                   {t.close}
                 </DialogClose>

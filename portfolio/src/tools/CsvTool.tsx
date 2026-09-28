@@ -37,7 +37,7 @@ export function CsvTool({ t }: { t: ToolsDict }) {
       <IO>
         <div>
           <FieldLabel htmlFor="csv-in">{t.input}</FieldLabel>
-          <Field id="csv-in" value={input} onChange={(e) => setInput(e.target.value)} placeholder={"nome,idade\nAna,29"} className="font-mono text-sm" />
+          <Field id="csv-in" value={input} onChange={(e) => setInput(e.target.value)} placeholder={"produto,preco\ncafé,12"} className="font-mono text-sm" />
         </div>
         <div>
           <FieldLabel htmlFor="csv-out">{t.output}</FieldLabel>

@@ -14,7 +14,7 @@ import { CarouselArrows } from "@/components/common/CarouselArrows"
 import { Icon } from "@/components/common/Icon"
 import { useCarousel } from "@/components/common/useCarousel"
 import { FAVORITES, HOME, type FavoriteKind } from "@/data/home"
-import { useDict } from "@/i18n/lang"
+import { useDict, useLang } from "@/i18n/lang"
 import { cn } from "@/lib/utils"
 
 const KIND_ICONS: Record<FavoriteKind, IconDefinition> = {
@@ -37,6 +37,7 @@ const STRIPES = [
 /** Linha de favoritos: mini-carrossel de capas 2:3 com tag de categoria e título. */
 export function Favorites() {
   const t = useDict(HOME)
+  const { lang } = useLang()
   const carousel = useCarousel<HTMLUListElement>()
 
   return (
@@ -66,9 +67,11 @@ export function Favorites() {
         aria-label={t.favTitle}
         className="-mx-5 -mt-1 flex snap-x snap-mandatory list-none gap-3 overflow-x-auto scroll-smooth scroll-px-5 px-5 pt-1 pb-3.5 [scrollbar-width:none] desk:mx-0 desk:scroll-px-0 desk:gap-4 desk:px-0 desk:pr-2 [&::-webkit-scrollbar]:hidden"
       >
-        {FAVORITES.map((f, i) => (
+        {FAVORITES.map((f, i) => {
+          const title = typeof f.title === "string" ? f.title : f.title[lang]
+          return (
           <li
-            key={`${f.kind}-${f.title}`}
+            key={`${f.kind}-${title}`}
             className="w-[116px] flex-none snap-start border-3 border-white bg-panel nb-4 desk:w-[136px]"
           >
             <div className={cn("relative grid aspect-[2/3] place-items-center overflow-hidden border-b-3 border-white", !f.cover && STRIPES[i % 3])}>
@@ -82,15 +85,16 @@ export function Favorites() {
               </span>
             </div>
             <div className="px-2.5 py-2">
-              <p title={f.title} className="m-0 truncate text-sm leading-[1.3] font-bold">
-                {f.title}
+              <p title={title} className="m-0 truncate text-sm leading-[1.3] font-bold">
+                {title}
               </p>
               <p title={f.author} className="m-0 mt-0.5 truncate text-xs leading-[1.3] text-lilac-3">
                 {f.author}
               </p>
             </div>
           </li>
-        ))}
+          )
+        })}
       </ul>
     </div>
   )

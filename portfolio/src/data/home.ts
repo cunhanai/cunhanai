@@ -1,17 +1,23 @@
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core"
 import {
-  faCaretUp,
-  faCircle,
+  faBookOpen,
+  faBriefcase,
   faCode,
   faDatabase,
-  faDiamond,
+  faGraduationCap,
+  faLaptopCode,
   faPalette,
   faScrewdriverWrench,
-  faSeedling,
 } from "@fortawesome/free-solid-svg-icons"
 
 import type { Lang } from "@/i18n/lang"
 import type { ToolId } from "@/data/tools"
+
+/*
+ * PRIVACIDADE: nenhum texto deste arquivo pode citar empresa, nome/sigla da
+ * faculdade, cidade/região ou idade. (Única exceção, pedida pela Ana: o link
+ * do repositório do compilador.)
+ */
 
 export type FunFact = { icon: IconDefinition; value: number; sub?: string; label: string; accent?: boolean }
 export type NowItem = { icon: IconDefinition; label: string; text: string }
@@ -21,17 +27,22 @@ export type Project = {
   shot: string
   year: string
   title: string
+  /** texto curto do card */
   desc: string
+  /** descrição da janela expandida */
+  longDesc: string
   tags: string[]
   blocks: [context: string, what: string, role: string]
-  repo?: string
+  /** botão principal da janela; sem link, a janela mostra só "Fechar" */
+  link?: { href: string; label: string; github?: boolean }
 }
 
 export type FavoriteKind = "album" | "movie" | "anime" | "book" | "tool" | "game" | "series"
 export type Favorite = {
   kind: FavoriteKind
-  title: string
-  /** Autor, artista, diretor, estúdio ou dev — o que fizer sentido para a categoria. */
+  /** título; um objeto quando precisa de versão por idioma */
+  title: string | Record<Lang, string>
+  /** Autor, artista, estúdio ou criador — o que fizer sentido para a categoria. */
   author: string
   /** URL da capa (2:3). Sem capa, mostra um placeholder listrado com o ícone da categoria. */
   cover?: string
@@ -70,7 +81,6 @@ export type HomeDict = {
   nextFavs: string
   favKinds: Record<FavoriteKind, string>
   allRepos: string
-  repo: string
   close: string
   toolsTitle: string
   toolsCount: string
@@ -82,46 +92,57 @@ export type HomeDict = {
   tools: Record<ToolId, [name: string, desc: string]>
 }
 
-// Links pessoais — troque pelos seus.
 export const LINKS = {
   github: "https://github.com/cunhanai",
-  linkedin: "#",
-  lattes: "#",
-  email: "#",
+  linkedin: "https://www.linkedin.com/in/ana-julia-da-cunha/",
+  lattes: "http://lattes.cnpq.br/6451237604491893",
+  email: "mailto:dacunhanajulia@gmail.com",
 }
 
-// Favoritos — troque pelos seus (títulos não são traduzidos). `cover` aceita uma URL de imagem 2:3.
+const FICHAS_URL = "https://www.fichas.anacunha.com.br"
+const COMPILER_URL = "https://github.com/cunhanai/FURB-C-Compilador-20242"
+
+// Favoritos (nomes não se traduzem, salvo onde há objeto por idioma). `cover` aceita uma URL de imagem 2:3.
 export const FAVORITES: Favorite[] = [
-  { kind: "album", title: "[Título do álbum]", author: "[Artista]" },
-  { kind: "movie", title: "[Título do filme]", author: "[Direção]" },
-  { kind: "anime", title: "[Título do anime]", author: "[Estúdio]" },
-  { kind: "book", title: "[Título do livro]", author: "[Autora ou autor]" },
-  { kind: "tool", title: "[Nome da ferramenta]", author: "[Empresa ou criador]" },
-  { kind: "game", title: "[Título do jogo]", author: "[Estúdio]" },
-  { kind: "series", title: "[Título da série]", author: "[Criação]" },
-  { kind: "book", title: "[Outro livro com um título bem longo]", author: "[Autora ou autor]" },
-  { kind: "album", title: "[Outro álbum]", author: "[Artista]" },
-  { kind: "movie", title: "[Outro filme]", author: "[Direção]" },
+  { kind: "album", title: "Arirang", author: "BTS" },
+  { kind: "book", title: "O Fundador da Cultivação Demoníaca (Mo Dao Zu Shi)", author: "Mo Xiang Tong Xiu" },
+  { kind: "book", title: "Vou Te Receitar um Gato", author: "Syou Ishida" },
+  { kind: "book", title: "O Problema dos Três Corpos", author: "Liu Cixin" },
+  { kind: "book", title: "Solo Leveling", author: "Chugong" },
+  { kind: "anime", title: "Frieren: Beyond Journey's End", author: "Kanehito Yamada e Tsukasa Abe" },
+  { kind: "anime", title: "To Be Hero X", author: "Li Haoling" },
+  { kind: "anime", title: "Dr. Stone", author: "Riichiro Inagaki e Boichi" },
+  { kind: "game", title: "Genshin Impact", author: "HoYoverse" },
+  { kind: "game", title: { pt: "Rusty Lake (coleção)", en: "Rusty Lake (collection)" }, author: "Rusty Lake" },
+  { kind: "game", title: "A Plague Tale: Innocence", author: "Asobo Studio" },
 ]
 
-export const TECH_STRIP = ["Python", "SQL", "React", "dbt", "TypeScript", "BigQuery", "Tailwind", "Docker"]
+export const TECH_STRIP = ["Python", "SQL", "dbt", "Airflow", "PostgreSQL", "ClickHouse", "Docker", "React"]
 
-const STACK_ICONS = [faCode, faDatabase, faPalette, faScrewdriverWrench]
+const STACK_ICONS = [faCode, faDatabase, faLaptopCode, faScrewdriverWrench]
+
+const STACK_ITEMS: [string, boolean][][] = [
+  [["Python", true], ["SQL", true], ["C#", false], ["Java", false], ["JavaScript", false]],
+  [["dbt", true], ["Airflow", true], ["PostgreSQL", true], ["ClickHouse", true], ["Kafka", false], ["SQL Server", false]],
+  [["React", false], ["Vue", false], ["HTML/CSS", false], ["Tailwind", false], ["Vite", false]],
+  [["Docker", true], ["Git", true], ["APIs REST", true], ["Linux", false], ["Vercel", false], ["Neon", false]],
+]
 
 export const HOME: Record<Lang, HomeDict> = {
   pt: {
     role: "Software Developer & Data Analyst",
-    heroLead1: "Dados viram ",
-    heroLead2: "decisões",
-    heroSub: "Sou a Ana. Escrevo código e analiso dados — e construo utilitários pequenos que eu mesma uso todo dia.",
+    heroLead1: "Código, dados e ",
+    heroLead2: "diversão",
+    heroSub:
+      "Oi, eu sou a Ana! Deixo os dados prontos para serem usados e, quando sobra tempo, construo ferramentas que ajudam no dia a dia.",
     ctaProjects: "Ver projetos",
-    findMe: "Onde me achar",
+    findMe: "Fale comigo",
     photoSlot: "foto — banner full-bleed",
     aboutTitle: "Sobre mim",
     aboutP1:
-      "Trabalho nos dois lados da mesma mesa: construo o produto e depois olho os números para entender o que ele realmente fez. Gosto de pipelines que não quebram no domingo e de dashboards que alguém abre de verdade.",
+      "Trabalho na parte do caminho que quase ninguém vê: crio APIs que buscam dados de lojas online, monto pipelines que levam tudo até o banco de dados e deixo as tabelas prontas para quem vai analisar. Comecei desenvolvendo sistemas e trouxe de lá o gosto por construir e por entender como as coisas funcionam por dentro.",
     aboutP2:
-      "Texto de exemplo — troque por sua história: como você começou, o que estuda hoje, o que gosta de fazer longe da tela.",
+      "Longe da tela, estou quase sempre com um livro na mão, e sim, leio até andando na rua. O resto do tempo se divide entre animes, Genshin Impact, Sorcery: Contested Realm e um bom cappuccino (ou chá) com chocolate.",
     langsLabel: "Idiomas",
     langs: [
       { name: "Português", level: "nativo" },
@@ -129,30 +150,33 @@ export const HOME: Record<Lang, HomeDict> = {
       { name: "Espanhol", level: "intermediário" },
     ],
     funFacts: [
-      { icon: faDiamond, value: 3, label: "anos de experiência" },
-      { icon: faCaretUp, value: 8, sub: "/9", label: "semestres de Computação" },
-      { icon: faSeedling, value: 4, label: "plantinhas vivas em casa", accent: true },
+      { icon: faGraduationCap, value: 8, sub: "/9", label: "semestres de Computação" },
+      { icon: faBriefcase, value: 3, label: "anos de experiência" },
+      { icon: faBookOpen, value: 133, label: "livros lidos", accent: true },
     ],
     nowLabel: "Estudando agora",
     nowSub: "atualizado em setembro de 2026",
     nowItems: [
-      { icon: faDiamond, label: "Faculdade", text: "Visão computacional aplicada a imagens de drone, para o TCC." },
-      { icon: faCircle, label: "Interesse pessoal", text: "Engenharia de dados: modelagem dimensional e orquestração." },
-      { icon: faCaretUp, label: "Fora da tela", text: "Aqui entra seu hobby — troque por música, corrida, o que for." },
+      {
+        icon: faGraduationCap,
+        label: "Faculdade",
+        text: "No TCC, visão computacional e machine learning para medir árvores em imagens de drone. Nas aulas: Kali Linux, Unity com Kinect e PLN.",
+      },
+      { icon: faBriefcase, label: "No trabalho", text: "Pegando prática em React e me aprofundando em dbt e Kafka." },
+      { icon: faPalette, label: "Vida pessoal", text: "Aprendendo coreano, aprimorando o espanhol e pintando com marcadores e tintas." },
     ],
     stackTitle: "Stack",
-    stackLead: "O que eu uso de verdade. Os blocos roxos são o que abro quase todo dia.",
+    stackLead: "Estas são as ferramentas que uso de verdade. As roxas fazem parte da minha rotina quase todo dia.",
     stackDaily: "uso diário",
     stackKnown: "já trabalhei",
-    stackGroups: [
-      { icon: STACK_ICONS[0], label: "Linguagens", items: [["Python", true], ["SQL", true], ["TypeScript", true], ["JavaScript", true], ["Java", false], ["R", false]] },
-      { icon: STACK_ICONS[1], label: "Dados", items: [["Pandas", true], ["dbt", true], ["BigQuery", true], ["Postgres", true], ["Airflow", false], ["Power BI", false]] },
-      { icon: STACK_ICONS[2], label: "Front-end", items: [["React", true], ["Tailwind", true], ["Vite", true], ["Next.js", false]] },
-      { icon: STACK_ICONS[3], label: "Ferramentas", items: [["Git", true], ["Docker", true], ["Linux", true], ["AWS", false], ["Figma", false]] },
-    ],
+    stackGroups: ["Linguagens", "Dados", "Web", "Ferramentas"].map((label, i) => ({
+      icon: STACK_ICONS[i],
+      label,
+      items: STACK_ITEMS[i],
+    })),
     projectsTitle: "Projetos",
     projectsLead:
-      "Projetos de faculdade e utilitários que nasceram de alguma necessidade minha. Toque em um card para ver mais detalhes.",
+      "Um projeto pessoal que está tomando forma e um trabalho de faculdade que me deixou orgulhosa. Clique nos cards para conhecer melhor.",
     moreInfo: "Ver detalhes",
     prevProject: "Projeto anterior",
     nextProject: "Próximo projeto",
@@ -162,54 +186,58 @@ export const HOME: Record<Lang, HomeDict> = {
     nextFavs: "Próximos favoritos",
     favKinds: { album: "Álbum", movie: "Filme", anime: "Anime", book: "Livro", tool: "Ferramenta", game: "Jogo", series: "Série" },
     allRepos: "Todos os repositórios",
-    repo: "Ver no GitHub",
     close: "Fechar",
     toolsTitle: "Toolbox",
     toolsCount: "8 ferramentas",
-    toolsLead: "Utilitários que rodam inteiramente no seu navegador. Nada é enviado para servidor.",
+    toolsLead: "Pequenos utilitários que funcionam direto no navegador, sem enviar nada para servidor.",
     toolsAll: "Abrir a toolbox completa",
     backTop: "Voltar ao topo",
     labels: ["Contexto", "O que faz", "Meu papel"],
     projects: [
       {
-        kind: "Faculdade", shot: "print do projeto", year: "2026", title: "Copa & DAP por drone",
-        desc: "Estimativa de diâmetro à altura do peito a partir de copas detectadas em ortomosaico.",
-        tags: ["Python", "YOLOv8", "GeoPandas"],
+        kind: "Faculdade",
+        shot: "imagem do projeto",
+        year: "2026",
+        title: "Medindo árvores com drone",
+        desc: "TCC em andamento: estimativa do tamanho de árvores a partir de imagens de drone, com visão computacional e machine learning.",
+        longDesc:
+          "Estimativa de parâmetros dendrométricos de árvores por processamento computacional de ortomosaicos obtidos por drone.",
+        tags: ["Visão computacional", "Machine learning", "Fotogrametria"],
         blocks: [
-          "Trabalho de conclusão de curso, feito com imagens de drone de uma área de plantio.",
-          "Detecta copas em um ortomosaico, extrai métricas de cada copa e alimenta um modelo que estima o DAP.",
-          "Do recorte das imagens ao modelo final, incluindo a validação contra medições de campo.",
+          "Pré-projeto do trabalho de conclusão do curso de Ciência da Computação. Reúne fotogrametria, visão computacional e aprendizado de máquina aplicados a árvores. Será implementado a partir do próximo semestre.",
+          "A proposta é estimar o diâmetro à altura do peito (DAP) e a área basal das árvores a partir do delineamento das copas em ortomosaicos gerados com imagens de drone.",
+          "Estudo e desenvolvimento do trabalho, da revisão bibliográfica à implementação e avaliação dos modelos.",
         ],
       },
       {
-        kind: "Faculdade", shot: "print do dashboard", year: "2025", title: "Painel de dados climáticos",
-        desc: "Dashboard que cruza séries históricas de chuva e temperatura de estações da região.",
-        tags: ["Python", "Pandas", "Streamlit"],
+        kind: "Pessoal",
+        shot: "print do sistema",
+        year: "2026",
+        title: "Compêndio de Fichas",
+        desc: "Um lugar para criar e guardar fichas de RPG, construído inteiramente com o Claude.",
+        longDesc: "Sistema de fichas de RPG desenvolvido com o Claude.",
+        tags: ["Vercel", "Neon", "PostgreSQL"],
         blocks: [
-          "Disciplina de análise de dados, usando séries públicas de estações meteorológicas.",
-          "Limpa as séries, preenche lacunas e mostra comparações por período e por estação.",
-          "Tratamento dos dados e construção da interface.",
+          "Projeto pessoal, já no ar em fichas.anacunha.com.br.",
+          "Permite criar e guardar fichas de personagens de RPG, acessíveis de qualquer lugar. A interface do sistema é só em português.",
+          "Idealizei o projeto e defini todas as regras de negócio e os cálculos das fichas; o Claude executou o código sob minha direção. Também cuidei da hospedagem na Vercel e da base de dados no Neon.",
         ],
+        link: { href: FICHAS_URL, label: "Ver o sistema" },
       },
       {
-        kind: "Utilitário", shot: "print da toolbox", year: "2026", title: "Toolbox pessoal",
-        desc: "As ferramentas deste site: conversores e formatadores que eu abria em dez abas diferentes.",
-        tags: ["React", "Tailwind", "Vite"],
+        kind: "Faculdade",
+        shot: "print do compilador",
+        year: "2024",
+        title: "Compilador de linguagem própria",
+        desc: "Trabalho final da disciplina de Compiladores: um compilador em Java para uma linguagem própria.",
+        longDesc: "Compilador em Java para uma linguagem própria (nome de código 2024.2).",
+        tags: ["Java"],
         blocks: [
-          "Cansei de procurar o mesmo formatador de JSON no Google toda semana.",
-          "Oito utilitários de texto e dados, todos client-side, sem telemetria e sem build pesado.",
-          "Projeto pessoal, do design ao código.",
+          "Trabalho final da disciplina de Compiladores.",
+          "Recebe programas escritos na linguagem própria da disciplina e passa por análise léxica, sintática e semântica, gerando código intermediário para MSIL.",
+          "Implementação do compilador em Java.",
         ],
-      },
-      {
-        kind: "Utilitário", shot: "print do CLI", year: "2025", title: "Organizador de arquivos",
-        desc: "Script que renomeia e arquiva exportações de relatório seguindo um padrão fixo.",
-        tags: ["Python", "Typer", "Regex"],
-        blocks: [
-          "Uma pasta de downloads com centenas de arquivos com nomes inconsistentes.",
-          "Lê o conteúdo, extrai data e tipo do relatório e move tudo para a estrutura de pastas certa.",
-          "Projeto pessoal, usado todo mês.",
-        ],
+        link: { href: COMPILER_URL, label: "Ver no GitHub", github: true },
       },
     ],
     tools: {
@@ -225,17 +253,18 @@ export const HOME: Record<Lang, HomeDict> = {
   },
   en: {
     role: "Software Developer & Data Analyst",
-    heroLead1: "Data into ",
-    heroLead2: "decisions",
-    heroSub: "I'm Ana. I write code and analyse data — and I build small utilities I use myself every day.",
-    ctaProjects: "See projects",
-    findMe: "Find me",
+    heroLead1: "Code, data and ",
+    heroLead2: "fun",
+    heroSub:
+      "Hi, I'm Ana! I get data ready to be used and, when I have spare time, I build tools that make everyday life easier.",
+    ctaProjects: "View projects",
+    findMe: "Get in touch",
     photoSlot: "photo — full-bleed banner",
     aboutTitle: "About me",
     aboutP1:
-      "I work on both sides of the same desk: I build the product, then look at the numbers to understand what it actually did. I like pipelines that don't break on Sundays and dashboards someone really opens.",
+      "I work on the part of the journey almost nobody sees: I build APIs that pull data from online stores, set up pipelines that carry it all into the database, and leave the tables ready for whoever will analyze them. I started out building software and brought with me a love for building things and understanding how they work under the hood.",
     aboutP2:
-      "Placeholder text — replace with your story: how you started, what you're studying now, what you do away from the screen.",
+      "Away from the screen, I almost always have a physical book in hand, and yes, I read while walking down the street. The rest of my time goes to anime, Genshin Impact, Sorcery: Contested Realm and a good cappuccino (or tea) with chocolate.",
     langsLabel: "Languages",
     langs: [
       { name: "Portuguese", level: "native" },
@@ -243,97 +272,103 @@ export const HOME: Record<Lang, HomeDict> = {
       { name: "Spanish", level: "intermediate" },
     ],
     funFacts: [
-      { icon: faDiamond, value: 3, label: "years of professional experience" },
-      { icon: faCaretUp, value: 8, sub: "/9", label: "Computer Science semesters done" },
-      { icon: faSeedling, value: 4, label: "plants still alive on my desk", accent: true },
+      { icon: faGraduationCap, value: 8, sub: "/9", label: "semesters of Computer Science" },
+      { icon: faBriefcase, value: 3, label: "years of experience" },
+      { icon: faBookOpen, value: 133, label: "books read", accent: true },
     ],
     nowLabel: "Studying now",
     nowSub: "updated September 2026",
     nowItems: [
-      { icon: faDiamond, label: "University", text: "Computer vision applied to drone imagery, for my final project." },
-      { icon: faCircle, label: "Personal interest", text: "Data engineering: dimensional modelling and orchestration." },
-      { icon: faCaretUp, label: "Away from the screen", text: "Your hobby goes here — swap for music, running, whatever fits." },
+      {
+        icon: faGraduationCap,
+        label: "College",
+        text: "For my thesis, computer vision and machine learning to measure trees in drone imagery. In class: Kali Linux, Unity with Kinect and NLP.",
+      },
+      { icon: faBriefcase, label: "At work", text: "Getting hands-on with React and going deeper on dbt and Kafka." },
+      { icon: faPalette, label: "Personal life", text: "Learning Korean, improving my Spanish and painting with markers and paints." },
     ],
     stackTitle: "Stack",
-    stackLead: "What I actually use. The purple blocks are the ones I open almost every day.",
-    stackDaily: "daily",
-    stackKnown: "worked with",
-    stackGroups: [
-      { icon: STACK_ICONS[0], label: "Languages", items: [["Python", true], ["SQL", true], ["TypeScript", true], ["JavaScript", true], ["Java", false], ["R", false]] },
-      { icon: STACK_ICONS[1], label: "Data", items: [["Pandas", true], ["dbt", true], ["BigQuery", true], ["Postgres", true], ["Airflow", false], ["Power BI", false]] },
-      { icon: STACK_ICONS[2], label: "Front-end", items: [["React", true], ["Tailwind", true], ["Vite", true], ["Next.js", false]] },
-      { icon: STACK_ICONS[3], label: "Tools", items: [["Git", true], ["Docker", true], ["Linux", true], ["AWS", false], ["Figma", false]] },
-    ],
+    stackLead: "These are the tools I actually use. The purple ones are part of my routine almost every day.",
+    stackDaily: "daily use",
+    stackKnown: "used before",
+    stackGroups: ["Languages", "Data", "Web", "Tools"].map((label, i) => ({
+      icon: STACK_ICONS[i],
+      label,
+      items: STACK_ITEMS[i],
+    })),
     projectsTitle: "Projects",
-    projectsLead: "University projects and utilities that came out of some need of my own. Tap a card for more detail.",
-    moreInfo: "See details",
+    projectsLead: "A personal project that's taking shape and a college assignment I'm proud of. Click a card to learn more.",
+    moreInfo: "View details",
     prevProject: "Previous project",
     nextProject: "Next project",
-    favTitle: "Favourites",
-    favSub: "albums, films, anime, books and tools",
-    prevFavs: "Previous favourites",
-    nextFavs: "Next favourites",
-    favKinds: { album: "Album", movie: "Film", anime: "Anime", book: "Book", tool: "Tool", game: "Game", series: "Series" },
+    favTitle: "Favorites",
+    favSub: "albums, movies, anime, books and tools",
+    prevFavs: "Previous favorites",
+    nextFavs: "Next favorites",
+    favKinds: { album: "Album", movie: "Movie", anime: "Anime", book: "Book", tool: "Tool", game: "Game", series: "Series" },
     allRepos: "All repositories",
-    repo: "View on GitHub",
     close: "Close",
     toolsTitle: "Toolbox",
     toolsCount: "8 tools",
-    toolsLead: "Utilities that run entirely in your browser. Nothing is sent to a server.",
+    toolsLead: "Small utilities that work right in your browser, sending nothing to a server.",
     toolsAll: "Open the full toolbox",
     backTop: "Back to top",
-    labels: ["Context", "What it does", "My part"],
+    labels: ["Context", "What it does", "My role"],
     projects: [
       {
-        kind: "University", shot: "project screenshot", year: "2026", title: "Canopy & DBH from drones",
-        desc: "Estimating diameter at breast height from crowns detected in an orthomosaic.",
-        tags: ["Python", "YOLOv8", "GeoPandas"],
+        kind: "College",
+        shot: "project image",
+        year: "2026",
+        title: "Measuring trees with drones",
+        desc: "Thesis in progress: estimating tree size from drone imagery, using computer vision and machine learning.",
+        longDesc: "Estimating tree dendrometric parameters through computational processing of drone-acquired orthomosaics.",
+        tags: ["Computer vision", "Machine learning", "Photogrammetry"],
         blocks: [
-          "Final-year project, built on drone imagery of a planted area.",
-          "Detects crowns in an orthomosaic, extracts per-crown metrics and feeds a model that estimates DBH.",
-          "From image tiling to the final model, including validation against field measurements.",
+          "Pre-project of the Computer Science undergraduate thesis. It brings together photogrammetry, computer vision and machine learning applied to trees. It will be implemented starting next semester.",
+          "The goal is to estimate tree diameter at breast height (DBH) and basal area from crown delineation in orthomosaics built from drone images.",
+          "Research and development of the work, from the literature review to implementing and evaluating the models.",
         ],
       },
       {
-        kind: "University", shot: "dashboard screenshot", year: "2025", title: "Climate data panel",
-        desc: "Dashboard crossing historical rainfall and temperature series from regional stations.",
-        tags: ["Python", "Pandas", "Streamlit"],
+        kind: "Personal",
+        shot: "app screenshot",
+        year: "2026",
+        title: "Character Sheet Compendium",
+        desc: "A place to create and keep RPG character sheets, built entirely with Claude.",
+        longDesc: "RPG character sheet system built with Claude.",
+        tags: ["Vercel", "Neon", "PostgreSQL"],
         blocks: [
-          "Data analysis course, using public weather station series.",
-          "Cleans the series, fills gaps and compares periods and stations.",
-          "Data wrangling and the interface.",
+          "Personal project, already live at fichas.anacunha.com.br.",
+          "Lets you create and keep RPG character sheets, accessible from anywhere. The system's interface is Portuguese-only.",
+          "I came up with the project and defined all the business rules and character sheet calculations; Claude wrote the code under my direction. I also handled hosting on Vercel and the database on Neon.",
         ],
+        link: { href: FICHAS_URL, label: "View the system" },
       },
       {
-        kind: "Utility", shot: "toolbox screenshot", year: "2026", title: "Personal toolbox",
-        desc: "The tools on this site: converters and formatters I used to keep open in ten tabs.",
-        tags: ["React", "Tailwind", "Vite"],
+        kind: "College",
+        shot: "compiler screenshot",
+        year: "2024",
+        title: "Custom-language compiler",
+        desc: "Final project for a Compilers course: a compiler in Java for a custom language.",
+        longDesc: "Java compiler for a custom language (codename 2024.2).",
+        tags: ["Java"],
         blocks: [
-          "I got tired of googling the same JSON formatter every week.",
-          "Eight text and data utilities, all client-side, no telemetry and no heavy build.",
-          "Personal project, design and code.",
+          "Final project of a Compilers course.",
+          "Takes programs written in the course's custom language through lexical, syntactic and semantic analysis, generating intermediate code targeting MSIL.",
+          "Implementation of the compiler in Java.",
         ],
-      },
-      {
-        kind: "Utility", shot: "CLI screenshot", year: "2025", title: "File organiser",
-        desc: "Script that renames and files report exports following a fixed pattern.",
-        tags: ["Python", "Typer", "Regex"],
-        blocks: [
-          "A downloads folder with hundreds of inconsistently named files.",
-          "Reads the content, extracts date and report type, and moves everything into the right folder structure.",
-          "Personal project, used every month.",
-        ],
+        link: { href: COMPILER_URL, label: "View on GitHub", github: true },
       },
     ],
     tools: {
-      case: ["Case converter", "UPPER, lower, Title Case, camelCase"],
+      case: ["Case converter", "UPPERCASE, lowercase, Title Case, camelCase"],
       count: ["Character counter", "Characters, words, lines, reading time"],
-      json: ["JSON formatter", "Indent, validate and minify"],
-      uuid: ["UUID generator", "Batch UUID v4"],
-      b64: ["Base64", "Encode and decode text"],
-      diff: ["Text diff", "Compare two texts line by line"],
+      json: ["JSON formatter", "Indents, validates and minifies"],
+      uuid: ["UUID generator", "UUID v4 in bulk"],
+      b64: ["Base64", "Encodes and decodes text"],
+      diff: ["Text diff", "Compares two texts line by line"],
       time: ["Timestamp converter", "Unix, ISO 8601, local time"],
-      csv: ["CSV → JSON", "CSV table into array of objects"],
+      csv: ["CSV → JSON", "CSV table to array of objects"],
     },
   },
 }

@@ -34,7 +34,7 @@ export function UuidTool({ t }: { t: ToolsDict }) {
           />
         </label>
       </Toolbar>
-      <ul className="m-0 max-h-[260px] list-none overflow-auto border-3 border-white bg-ink p-0">
+      <ul className="nb-scroll m-0 max-h-[260px] list-none overflow-auto border-3 border-white bg-ink p-0">
         <AnimatePresence initial={false}>
           {uuids.map((u) => (
             <motion.li

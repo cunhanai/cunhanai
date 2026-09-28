@@ -22,7 +22,7 @@ export function Field({ output, className, ...props }: ComponentProps<typeof Tex
       readOnly={output}
       spellCheck={false}
       className={cn(
-        "h-[150px] min-h-[80px] resize-y border-3 p-3 text-[15px] leading-normal font-normal tab:h-[190px]",
+        "nb-scroll h-[150px] min-h-[80px] resize-y border-3 p-3 text-[15px] leading-normal font-normal tab:h-[190px]",
         output ? "border-white bg-panel-2" : "border-line-2 bg-ink",
         className,
       )}
@@ -60,7 +60,7 @@ export function FieldSelect({
       >
         <SelectValue />
       </SelectTrigger>
-      <SelectContent className="border-3 border-white bg-panel">
+      <SelectContent className="nb-scroll border-3 border-white bg-panel">
         {items.map((it) => (
           <SelectItem key={it.value} value={it.value} className="cursor-(--cursor-pointer) text-[13px] font-semibold">
             {it.label}
