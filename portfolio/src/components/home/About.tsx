@@ -5,6 +5,7 @@ import { Icon } from "@/components/common/Icon"
 import { Reveal } from "@/components/common/Reveal"
 import { SectionHeading } from "@/components/common/SectionHeading"
 import { CountUp } from "@/components/home/CountUp"
+import { Favorites } from "@/components/home/Favorites"
 import { HOME } from "@/data/home"
 import { useDict } from "@/i18n/lang"
 import { cn } from "@/lib/utils"
@@ -97,6 +98,10 @@ export function About() {
               </div>
             ))}
           </div>
+        </Reveal>
+
+        <Reveal>
+          <Favorites />
         </Reveal>
       </Container>
     </section>

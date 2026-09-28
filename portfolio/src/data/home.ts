@@ -27,6 +27,16 @@ export type Project = {
   repo?: string
 }
 
+export type FavoriteKind = "album" | "movie" | "anime" | "book" | "tool" | "game" | "series"
+export type Favorite = {
+  kind: FavoriteKind
+  title: string
+  /** Autor, artista, diretor, estúdio ou dev — o que fizer sentido para a categoria. */
+  author: string
+  /** URL da capa (2:3). Sem capa, mostra um placeholder listrado com o ícone da categoria. */
+  cover?: string
+}
+
 export type HomeDict = {
   role: string
   heroLead1: string
@@ -52,6 +62,13 @@ export type HomeDict = {
   projectsTitle: string
   projectsLead: string
   moreInfo: string
+  prevProject: string
+  nextProject: string
+  favTitle: string
+  favSub: string
+  prevFavs: string
+  nextFavs: string
+  favKinds: Record<FavoriteKind, string>
   allRepos: string
   repo: string
   close: string
@@ -72,6 +89,20 @@ export const LINKS = {
   lattes: "#",
   email: "#",
 }
+
+// Favoritos — troque pelos seus (títulos não são traduzidos). `cover` aceita uma URL de imagem 2:3.
+export const FAVORITES: Favorite[] = [
+  { kind: "album", title: "[Título do álbum]", author: "[Artista]" },
+  { kind: "movie", title: "[Título do filme]", author: "[Direção]" },
+  { kind: "anime", title: "[Título do anime]", author: "[Estúdio]" },
+  { kind: "book", title: "[Título do livro]", author: "[Autora ou autor]" },
+  { kind: "tool", title: "[Nome da ferramenta]", author: "[Empresa ou criador]" },
+  { kind: "game", title: "[Título do jogo]", author: "[Estúdio]" },
+  { kind: "series", title: "[Título da série]", author: "[Criação]" },
+  { kind: "book", title: "[Outro livro com um título bem longo]", author: "[Autora ou autor]" },
+  { kind: "album", title: "[Outro álbum]", author: "[Artista]" },
+  { kind: "movie", title: "[Outro filme]", author: "[Direção]" },
+]
 
 export const TECH_STRIP = ["Python", "SQL", "React", "dbt", "TypeScript", "BigQuery", "Tailwind", "Docker"]
 
@@ -123,6 +154,13 @@ export const HOME: Record<Lang, HomeDict> = {
     projectsLead:
       "Projetos de faculdade e utilitários que nasceram de alguma necessidade minha. Toque em um card para ver mais detalhes.",
     moreInfo: "Ver detalhes",
+    prevProject: "Projeto anterior",
+    nextProject: "Próximo projeto",
+    favTitle: "Favoritos",
+    favSub: "álbuns, filmes, animes, livros e ferramentas",
+    prevFavs: "Favoritos anteriores",
+    nextFavs: "Próximos favoritos",
+    favKinds: { album: "Álbum", movie: "Filme", anime: "Anime", book: "Livro", tool: "Ferramenta", game: "Jogo", series: "Série" },
     allRepos: "Todos os repositórios",
     repo: "Ver no GitHub",
     close: "Fechar",
@@ -229,6 +267,13 @@ export const HOME: Record<Lang, HomeDict> = {
     projectsTitle: "Projects",
     projectsLead: "University projects and utilities that came out of some need of my own. Tap a card for more detail.",
     moreInfo: "See details",
+    prevProject: "Previous project",
+    nextProject: "Next project",
+    favTitle: "Favourites",
+    favSub: "albums, films, anime, books and tools",
+    prevFavs: "Previous favourites",
+    nextFavs: "Next favourites",
+    favKinds: { album: "Album", movie: "Film", anime: "Anime", book: "Book", tool: "Tool", game: "Game", series: "Series" },
     allRepos: "All repositories",
     repo: "View on GitHub",
     close: "Close",

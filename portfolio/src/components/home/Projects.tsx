@@ -2,13 +2,18 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faArrowRight, faArrowUpRightFromSquare, faFolderOpen, faXmark } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 
+import { CarouselArrows } from "@/components/common/CarouselArrows"
 import { Container } from "@/components/common/Container"
 import { Icon } from "@/components/common/Icon"
 import { Reveal } from "@/components/common/Reveal"
 import { SectionHeading } from "@/components/common/SectionHeading"
+import { useCarousel } from "@/components/common/useCarousel"
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
 import { HOME, LINKS, type Project } from "@/data/home"
 import { useDict } from "@/i18n/lang"
+import { cn } from "@/lib/utils"
+
+const pad = (n: number) => String(n).padStart(2, "0")
 
 const STRIPES = "bg-[repeating-linear-gradient(135deg,#2a1940_0_8px,#1e1230_8px_16px)]"
 
@@ -132,25 +137,79 @@ export function Projects() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   // mantém o último projeto durante a animação de saída
   const [lastIndex, setLastIndex] = useState(0)
+  const carousel = useCarousel<HTMLUListElement>()
+  const arrows = {
+    onPrev: () => carousel.go(-1),
+    onNext: () => carousel.go(1),
+    canPrev: carousel.canPrev,
+    canNext: carousel.canNext,
+    prevLabel: t.prevProject,
+    nextLabel: t.nextProject,
+    controls: "projects-track",
+  }
 
   return (
     <section id="projetos" className="scroll-mt-[74px] pt-14 pb-2.5">
       <Container>
         <SectionHeading icon={faFolderOpen} num="03" title={t.projectsTitle} />
-        <p className="mb-[22px] max-w-[56ch] text-[15px] leading-relaxed text-pretty text-lilac-2">{t.projectsLead}</p>
+        <div className="mb-[22px] flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
+          <p className="m-0 max-w-[56ch] text-[15px] leading-relaxed text-pretty text-lilac-2">{t.projectsLead}</p>
+          <div className="hidden flex-none items-center gap-3.5 desk:flex">
+            <span className="font-display text-xl font-bold" aria-live="polite">
+              {pad(carousel.index + 1)}
+              <span className="text-muted"> / {pad(t.projects.length)}</span>
+            </span>
+            <CarouselArrows {...arrows} />
+          </div>
+        </div>
 
-        <div className="grid grid-cols-1 gap-[18px] desk:grid-cols-2 desk:gap-[26px]">
-          {t.projects.map((p, i) => (
-            <Reveal key={p.title} index={i}>
-              <ProjectCard
-                project={p}
-                onOpen={() => {
-                  setLastIndex(i)
-                  setOpenIndex(i)
-                }}
-              />
-            </Reveal>
-          ))}
+        <Reveal>
+          {/* scroll nativo com snap: swipe no celular, setas no desktop */}
+          <ul
+            id="projects-track"
+            ref={carousel.ref}
+            tabIndex={0}
+            aria-label={t.projectsTitle}
+            aria-roledescription="carrossel"
+            className="-mx-5 -mt-1.5 flex snap-x snap-mandatory list-none gap-[18px] overflow-x-auto scroll-smooth scroll-px-5 px-5 pt-1.5 pb-4 [scrollbar-width:none] desk:mx-[-6px] desk:gap-[26px] desk:px-1.5 desk:scroll-px-1.5 [&::-webkit-scrollbar]:hidden"
+          >
+            {t.projects.map((p, i) => (
+              <li
+                key={p.title}
+                aria-roledescription="slide"
+                aria-label={`${i + 1} / ${t.projects.length}`}
+                className="w-[85%] flex-none snap-start desk:w-[calc((100%-38px)/2.2)]"
+              >
+                <ProjectCard
+                  project={p}
+                  onOpen={() => {
+                    setLastIndex(i)
+                    setOpenIndex(i)
+                  }}
+                />
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <div className="mt-4 flex items-center justify-between gap-3">
+          <div className="flex gap-2" aria-hidden>
+            {t.projects.map((p, i) => {
+              const on = i >= carousel.index && i < carousel.index + carousel.visible
+              return (
+                <span
+                  key={p.title}
+                  className={cn(
+                    "h-1.5 border-2 transition-all duration-300",
+                    on ? "w-10 border-white bg-main" : "w-[18px] border-line-2 bg-transparent",
+                  )}
+                />
+              )
+            })}
+          </div>
+          <div className="desk:hidden">
+            <CarouselArrows {...arrows} />
+          </div>
         </div>
 
         <a
