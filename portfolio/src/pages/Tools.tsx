@@ -121,7 +121,7 @@ export default function Tools() {
       <main className="relative z-[1] pt-[30px] pb-20">
         <Container variant="tools">
           <div className="mb-2 flex items-baseline gap-3.5">
-            <span className="font-display text-[15px] font-bold text-main">03</span>
+            <span className="font-display text-[15px] font-bold text-main">04</span>
             <h1 className="m-0 font-display text-[34px] font-bold tracking-[-0.02em] min-[900px]:text-[44px]">{t.title}</h1>
           </div>
           <p className="mb-[26px] max-w-[56ch] text-[15px] leading-relaxed text-pretty text-lilac-2">{t.lead}</p>

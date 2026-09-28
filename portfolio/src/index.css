@@ -104,6 +104,33 @@
   }
 }
 
+/*
+ * Barra de rolagem neobrutalista: trilho no tom do painel, thumb roxo com
+ * borda branca de 2px, sem cantos. Chrome 121+ ignora ::-webkit-scrollbar
+ * quando scrollbar-color existe, por isso o padrão do Firefox fica no @supports.
+ */
+@utility nb-scroll {
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--color-panel);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-main);
+    border: 2px solid #fff;
+    border-radius: 0;
+  }
+  &::-webkit-scrollbar-corner {
+    background: var(--color-panel);
+  }
+  @supports not selector(::-webkit-scrollbar) {
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-main) var(--color-panel);
+  }
+}
+
 /* Underline que cresce da esquerda nos links da nav */
 @utility nb-link {
   position: relative;

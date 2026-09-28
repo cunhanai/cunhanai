@@ -2,13 +2,17 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faArrowRight, faArrowUpRightFromSquare, faFolderOpen, faXmark } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 
+import { CarouselArrows, CarouselDots } from "@/components/common/CarouselArrows"
 import { Container } from "@/components/common/Container"
 import { Icon } from "@/components/common/Icon"
 import { Reveal } from "@/components/common/Reveal"
 import { SectionHeading } from "@/components/common/SectionHeading"
+import { useCarousel } from "@/components/common/useCarousel"
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
 import { HOME, LINKS, type Project } from "@/data/home"
 import { useDict } from "@/i18n/lang"
+
+const pad = (n: number) => String(n).padStart(2, "0")
 
 const STRIPES = "bg-[repeating-linear-gradient(135deg,#2a1940_0_8px,#1e1230_8px_16px)]"
 
@@ -37,7 +41,7 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
       type="button"
       onClick={onOpen}
       aria-haspopup="dialog"
-      className="block h-full w-full border-3 border-white bg-panel text-left font-sans text-white nb-8 nb-press"
+      className="flex h-full w-full flex-col items-stretch justify-start border-3 border-white bg-panel text-left font-sans text-white nb-8 nb-press"
     >
       <div className={`relative flex h-[150px] items-center justify-center border-b-3 border-white ${STRIPES}`}>
         <span className="text-[10px] font-bold tracking-[0.12em] text-lilac-3 uppercase">{project.shot}</span>
@@ -45,13 +49,14 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
           {project.kind}
         </span>
       </div>
-      <div className="p-[18px]">
+      <div className="flex flex-1 flex-col p-[18px]">
         <div className="flex items-baseline justify-between gap-2.5">
           <h3 className="m-0 font-display text-[23px] font-bold tracking-[-0.01em] text-pretty">{project.title}</h3>
           <span className="text-xs font-bold text-main">{project.year}</span>
         </div>
-        <p className="mt-2 text-[15px] leading-[1.55] text-pretty text-soft">{project.desc}</p>
-        <div className="mt-3.5">
+        <p className="mt-2 mb-3.5 text-[15px] leading-[1.55] text-pretty text-soft">{project.desc}</p>
+        {/* mt-auto: em cards de alturas diferentes, o espaço extra fica entre a descrição e as tags */}
+        <div className="mt-auto">
           <Tags tags={project.tags} />
         </div>
         <div className="mt-4 flex items-center gap-2 text-[13px] font-bold text-lilac">
@@ -69,7 +74,7 @@ function ProjectDialog({ project, open, onOpenChange }: { project: Project | nul
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="z-90 block max-h-[86vh] w-[calc(100%-36px)] max-w-[620px] gap-0 overflow-auto border-3 border-white bg-panel p-0 text-white shadow-[12px_12px_0_#A74DE1] sm:max-w-[620px] data-open:slide-in-from-bottom-3"
+        className="nb-scroll z-90 block max-h-[86vh] w-[calc(100%-36px)] max-w-[620px] gap-0 overflow-auto border-3 border-white bg-panel p-0 text-white shadow-[12px_12px_0_#A74DE1] sm:max-w-[620px] data-open:slide-in-from-bottom-3"
       >
         {project && (
           <>
@@ -92,7 +97,7 @@ function ProjectDialog({ project, open, onOpenChange }: { project: Project | nul
               <div className={`mt-[18px] flex h-[170px] items-center justify-center border-3 border-white ${STRIPES}`}>
                 <span className="text-[10px] font-bold tracking-[0.12em] text-lilac-3 uppercase">{project.shot}</span>
               </div>
-              <DialogDescription className="mt-5 text-base leading-[1.65] text-pretty text-soft-3">{project.desc}</DialogDescription>
+              <DialogDescription className="mt-5 text-base leading-[1.65] text-pretty text-soft-3">{project.longDesc}</DialogDescription>
               {project.blocks.map((text, i) => (
                 <div key={t.labels[i]} className="mt-[18px]">
                   <div className="flex items-center gap-2 text-[11px] font-bold tracking-[0.12em] text-lilac uppercase">
@@ -106,16 +111,18 @@ function ProjectDialog({ project, open, onOpenChange }: { project: Project | nul
                 <Tags tags={project.tags} size="md" />
               </div>
               <div className="mt-6 flex flex-wrap gap-2.5">
-                <a
-                  href={project.repo ?? LINKS.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-[9px] border-3 border-white bg-main px-[18px] py-3 text-sm font-bold text-white nb-5 nb-light nb-press"
-                >
-                  <Icon icon={faGithub} className="text-lg" />
-                  {t.repo}
-                </a>
-                <DialogClose className="border-3 border-line-2 bg-transparent px-[18px] py-3 text-sm font-bold text-white hover:border-lilac-3">
+                {project.link && (
+                  <a
+                    href={project.link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-[9px] border-3 border-white bg-main px-[18px] py-3 text-sm font-bold text-white nb-5 nb-light nb-press"
+                  >
+                    <Icon icon={project.link.github ? faGithub : faArrowUpRightFromSquare} className={project.link.github ? "text-lg" : "text-sm"} />
+                    {project.link.label}
+                  </a>
+                )}
+                <DialogClose className="flex items-center gap-[9px] border-3 border-white bg-panel px-[18px] py-3 text-sm font-bold text-white nb-5 nb-press">
                   {t.close}
                 </DialogClose>
               </div>
@@ -132,37 +139,73 @@ export function Projects() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   // mantém o último projeto durante a animação de saída
   const [lastIndex, setLastIndex] = useState(0)
+  const carousel = useCarousel<HTMLUListElement>()
+  const arrows = {
+    onPrev: () => carousel.go(-1),
+    onNext: () => carousel.go(1),
+    prevLabel: t.prevProject,
+    nextLabel: t.nextProject,
+    controls: "projects-track",
+  }
 
   return (
     <section id="projetos" className="scroll-mt-[74px] pt-14 pb-2.5">
       <Container>
         <SectionHeading icon={faFolderOpen} num="03" title={t.projectsTitle} />
-        <p className="mb-[22px] max-w-[56ch] text-[15px] leading-relaxed text-pretty text-lilac-2">{t.projectsLead}</p>
-
-        <div className="grid grid-cols-1 gap-[18px] desk:grid-cols-2 desk:gap-[26px]">
-          {t.projects.map((p, i) => (
-            <Reveal key={p.title} index={i}>
-              <ProjectCard
-                project={p}
-                onOpen={() => {
-                  setLastIndex(i)
-                  setOpenIndex(i)
-                }}
-              />
-            </Reveal>
-          ))}
+        <div className="mb-[22px] flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
+          <p className="m-0 max-w-[56ch] text-[15px] leading-relaxed text-pretty text-lilac-2">{t.projectsLead}</p>
+          {/* setas sempre acima da linha dos cards */}
+          <div className="ml-auto flex flex-none items-center gap-3.5">
+            <span className="font-display text-xl font-bold" aria-live="polite">
+              {pad(carousel.index + 1)}
+              <span className="text-muted"> / {pad(t.projects.length)}</span>
+            </span>
+            <CarouselArrows {...arrows} />
+          </div>
         </div>
 
-        <a
-          href={LINKS.github}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-[22px] inline-flex items-center gap-2.5 border-3 border-white bg-panel px-5 py-[13px] text-sm font-bold text-white nb-5 nb-press"
-        >
-          <Icon icon={faGithub} className="text-lg text-lilac" />
-          {t.allRepos}
-          <Icon icon={faArrowUpRightFromSquare} className="text-[13px]" />
-        </a>
+        <Reveal>
+          {/* scroll nativo com snap: swipe no celular, setas no desktop */}
+          <ul
+            id="projects-track"
+            ref={carousel.ref}
+            tabIndex={0}
+            aria-label={t.projectsTitle}
+            aria-roledescription="carrossel"
+            className="-mx-5 -mt-1.5 flex snap-x snap-mandatory list-none gap-[18px] overflow-x-auto scroll-smooth scroll-px-5 px-5 pt-1.5 pb-4 [scrollbar-width:none] desk:mx-[-6px] desk:gap-[26px] desk:px-1.5 desk:scroll-px-1.5 [&::-webkit-scrollbar]:hidden"
+          >
+            {t.projects.map((p, i) => (
+              <li
+                key={p.title}
+                aria-roledescription="slide"
+                aria-label={`${i + 1} / ${t.projects.length}`}
+                className="w-[85%] flex-none snap-start desk:w-[calc((100%-38px)/2.2)]"
+              >
+                <ProjectCard
+                  project={p}
+                  onOpen={() => {
+                    setLastIndex(i)
+                    setOpenIndex(i)
+                  }}
+                />
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <div className="mt-4 flex items-center justify-between gap-3">
+          <CarouselDots count={carousel.count || t.projects.length} index={carousel.index} visible={carousel.visible} />
+          <a
+            href={LINKS.github}
+            target="_blank"
+            rel="noreferrer"
+            className="flex flex-none items-center gap-2.5 border-3 border-white bg-panel px-4 py-2.5 text-sm font-bold text-white nb-5 nb-press"
+          >
+            <Icon icon={faGithub} className="text-lg text-lilac" />
+            {t.allRepos}
+            <Icon icon={faArrowUpRightFromSquare} className="text-[13px]" />
+          </a>
+        </div>
       </Container>
 
       <ProjectDialog

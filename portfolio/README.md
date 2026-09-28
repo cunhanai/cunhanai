@@ -67,8 +67,16 @@ Uma única vez, no GitHub: **Settings → Pages → Build and deployment → Sou
 
 O site fica em `https://cunhanai.github.io/cunhanai/`.
 
-## Pendências de conteúdo
+## Conteúdo e privacidade
 
-- Foto do hero e prints dos projetos (hoje são placeholders listrados)
-- Links de LinkedIn, Lattes e e-mail em `src/data/home.ts` (`LINKS`)
-- Parágrafo "sobre" de exemplo e o hobby em "Estudando agora"
+Todo o texto (PT/EN) fica em `src/data/` — `home.ts` (Home, projetos, favoritos, links), `toolsPage.ts`
+e `common.ts`; título e descrição da página em `src/i18n/lang.tsx`.
+
+Regra do site: nenhum texto, metadado ou alt pode citar empresa, nome/sigla da faculdade, cidade/região
+ou idade, e não há dados estruturados (JSON-LD/Open Graph). Única exceção, pedida pela Ana: o link do
+repositório do compilador.
+
+## Pendências
+
+- Foto do banner (remover EXIF/localização antes de publicar)
+- Capas dos favoritos (`cover` em `FAVORITES`) e imagens dos projetos

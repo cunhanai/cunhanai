@@ -22,7 +22,7 @@ export function DiffTool({ t }: { t: ToolsDict }) {
           <Field id="diff-b" value={b} onChange={(e) => setB(e.target.value)} className="text-sm" />
         </div>
       </IO>
-      <div className="mt-4 max-h-[300px] overflow-auto border-3 border-white bg-ink" aria-live="polite">
+      <div className="nb-scroll mt-4 max-h-[300px] overflow-auto border-3 border-white bg-ink" aria-live="polite">
         {rows.map(([mark, text], i) => (
           <div
             key={i}
