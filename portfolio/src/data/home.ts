@@ -104,17 +104,16 @@ const COMPILER_URL = "https://github.com/cunhanai/FURB-C-Compilador-20242"
 
 // Favoritos (nomes não se traduzem, salvo onde há objeto por idioma). `cover` aceita uma URL de imagem 2:3.
 export const FAVORITES: Favorite[] = [
-  { kind: "album", title: "Arirang", author: "BTS" },
-  { kind: "book", title: "O Fundador da Cultivação Demoníaca (Mo Dao Zu Shi)", author: "Mo Xiang Tong Xiu" },
-  { kind: "book", title: "Vou Te Receitar um Gato", author: "Syou Ishida" },
   { kind: "book", title: "O Problema dos Três Corpos", author: "Liu Cixin" },
-  { kind: "book", title: "Solo Leveling", author: "Chugong" },
+  { kind: "book", title: "Vou Te Receitar um Gato", author: "Syou Ishida" },
+  { kind: "book", title: "Mo Dao Zu Shi", author: "Mo Xiang Tong Xiu" },
   { kind: "anime", title: "Frieren: Beyond Journey's End", author: "Kanehito Yamada e Tsukasa Abe" },
   { kind: "anime", title: "To Be Hero X", author: "Li Haoling" },
   { kind: "anime", title: "Dr. Stone", author: "Riichiro Inagaki e Boichi" },
   { kind: "game", title: "Genshin Impact", author: "HoYoverse" },
   { kind: "game", title: { pt: "Rusty Lake (coleção)", en: "Rusty Lake (collection)" }, author: "Rusty Lake" },
   { kind: "game", title: "A Plague Tale: Innocence", author: "Asobo Studio" },
+  { kind: "album", title: "Arirang", author: "BTS" },
 ]
 
 export const TECH_STRIP = ["Python", "SQL", "dbt", "Airflow", "PostgreSQL", "ClickHouse", "Docker", "React"]
@@ -198,7 +197,7 @@ export const HOME: Record<Lang, HomeDict> = {
         kind: "Faculdade",
         shot: "imagem do projeto",
         year: "2026",
-        title: "Medindo árvores com drone",
+        title: "TCC: Estimativa de parâmetros dendrométricos a partir da copa da árvore",
         desc: "TCC em andamento: estimativa do tamanho de árvores a partir de imagens de drone, com visão computacional e machine learning.",
         longDesc:
           "Estimativa de parâmetros dendrométricos de árvores por processamento computacional de ortomosaicos obtidos por drone.",
@@ -319,7 +318,7 @@ export const HOME: Record<Lang, HomeDict> = {
         kind: "College",
         shot: "project image",
         year: "2026",
-        title: "Measuring trees with drones",
+        title: "Thesis: Estimating dendrometric parameters from the tree crown",
         desc: "Thesis in progress: estimating tree size from drone imagery, using computer vision and machine learning.",
         longDesc: "Estimating tree dendrometric parameters through computational processing of drone-acquired orthomosaics.",
         tags: ["Computer vision", "Machine learning", "Photogrammetry"],
