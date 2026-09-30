@@ -139,9 +139,9 @@ export const HOME: Record<Lang, HomeDict> = {
     photoSlot: "foto — banner full-bleed",
     aboutTitle: "Sobre mim",
     aboutP1:
-      "Trabalho na parte do caminho que quase ninguém vê: crio APIs que buscam dados de lojas online, monto pipelines que levam tudo até o banco de dados e deixo as tabelas prontas para quem vai analisar. Comecei desenvolvendo sistemas e trouxe de lá o gosto por construir e por entender como as coisas funcionam por dentro.",
+      "Trabalho nos bastidores: crio APIs de busca em lojas online, monto pipelines e deixo os dados prontos para análise. Comecei desenvolvendo sistemas e trouxe o gosto por construir e por entender como as coisas funcionam por dentro.",
     aboutP2:
-      "Longe da tela, estou quase sempre com um livro na mão, e sim, leio até andando na rua. O resto do tempo se divide entre animes, Genshin Impact, Sorcery: Contested Realm e um bom cappuccino (ou chá) com chocolate.",
+      "Longe da tela, estou sempre com um livro na mão, assistindo animes, jogando Genshin, e tomando um bom cappuccino (ou chá) com chocolate.",
     langsLabel: "Idiomas",
     langs: [
       { name: "Português", level: "nativo" },
@@ -261,9 +261,9 @@ export const HOME: Record<Lang, HomeDict> = {
     photoSlot: "photo — full-bleed banner",
     aboutTitle: "About me",
     aboutP1:
-      "I work on the part of the journey almost nobody sees: I build APIs that pull data from online stores, set up pipelines that carry it all into the database, and leave the tables ready for whoever will analyze them. I started out building software and brought with me a love for building things and understanding how they work under the hood.",
+      "I work behind the scenes: I build search APIs for online stores, set up pipelines and get data ready for analysis. I started out building software and brought with me a love for building things and understanding how they work under the hood.",
     aboutP2:
-      "Away from the screen, I almost always have a physical book in hand, and yes, I read while walking down the street. The rest of my time goes to anime, Genshin Impact, Sorcery: Contested Realm and a good cappuccino (or tea) with chocolate.",
+      "Away from the screen, I always have a book in hand, watching anime, playing Genshin, and enjoying a good cappuccino (or tea) with chocolate.",
     langsLabel: "Languages",
     langs: [
       { name: "Portuguese", level: "native" },
