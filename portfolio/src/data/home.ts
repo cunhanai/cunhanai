@@ -104,17 +104,16 @@ const COMPILER_URL = "https://github.com/cunhanai/FURB-C-Compilador-20242"
 
 // Favoritos (nomes não se traduzem, salvo onde há objeto por idioma). `cover` aceita uma URL de imagem 2:3.
 export const FAVORITES: Favorite[] = [
-  { kind: "album", title: "Arirang", author: "BTS" },
-  { kind: "book", title: "O Fundador da Cultivação Demoníaca (Mo Dao Zu Shi)", author: "Mo Xiang Tong Xiu" },
-  { kind: "book", title: "Vou Te Receitar um Gato", author: "Syou Ishida" },
   { kind: "book", title: "O Problema dos Três Corpos", author: "Liu Cixin" },
-  { kind: "book", title: "Solo Leveling", author: "Chugong" },
+  { kind: "book", title: "Vou Te Receitar um Gato", author: "Syou Ishida" },
+  { kind: "book", title: "Mo Dao Zu Shi", author: "Mo Xiang Tong Xiu" },
   { kind: "anime", title: "Frieren: Beyond Journey's End", author: "Kanehito Yamada e Tsukasa Abe" },
   { kind: "anime", title: "To Be Hero X", author: "Li Haoling" },
   { kind: "anime", title: "Dr. Stone", author: "Riichiro Inagaki e Boichi" },
   { kind: "game", title: "Genshin Impact", author: "HoYoverse" },
   { kind: "game", title: { pt: "Rusty Lake (coleção)", en: "Rusty Lake (collection)" }, author: "Rusty Lake" },
   { kind: "game", title: "A Plague Tale: Innocence", author: "Asobo Studio" },
+  { kind: "album", title: "Arirang", author: "BTS" },
 ]
 
 export const TECH_STRIP = ["Python", "SQL", "dbt", "Airflow", "PostgreSQL", "ClickHouse", "Docker", "React"]
@@ -140,9 +139,9 @@ export const HOME: Record<Lang, HomeDict> = {
     photoSlot: "foto — banner full-bleed",
     aboutTitle: "Sobre mim",
     aboutP1:
-      "Trabalho na parte do caminho que quase ninguém vê: crio APIs que buscam dados de lojas online, monto pipelines que levam tudo até o banco de dados e deixo as tabelas prontas para quem vai analisar. Comecei desenvolvendo sistemas e trouxe de lá o gosto por construir e por entender como as coisas funcionam por dentro.",
+      "Trabalho nos bastidores: crio APIs de busca em lojas online, monto pipelines e deixo os dados prontos para análise. Comecei desenvolvendo sistemas e trouxe o gosto por construir e por entender como as coisas funcionam por dentro.",
     aboutP2:
-      "Longe da tela, estou quase sempre com um livro na mão, e sim, leio até andando na rua. O resto do tempo se divide entre animes, Genshin Impact, Sorcery: Contested Realm e um bom cappuccino (ou chá) com chocolate.",
+      "Longe da tela, estou sempre com um livro na mão, assistindo animes, jogando Genshin e tomando um bom cappuccino (ou chá) com chocolate.",
     langsLabel: "Idiomas",
     langs: [
       { name: "Português", level: "nativo" },
@@ -198,7 +197,7 @@ export const HOME: Record<Lang, HomeDict> = {
         kind: "Faculdade",
         shot: "imagem do projeto",
         year: "2026",
-        title: "Medindo árvores com drone",
+        title: "TCC: Estimativa de parâmetros dendrométricos a partir da copa da árvore",
         desc: "TCC em andamento: estimativa do tamanho de árvores a partir de imagens de drone, com visão computacional e machine learning.",
         longDesc:
           "Estimativa de parâmetros dendrométricos de árvores por processamento computacional de ortomosaicos obtidos por drone.",
@@ -262,9 +261,9 @@ export const HOME: Record<Lang, HomeDict> = {
     photoSlot: "photo — full-bleed banner",
     aboutTitle: "About me",
     aboutP1:
-      "I work on the part of the journey almost nobody sees: I build APIs that pull data from online stores, set up pipelines that carry it all into the database, and leave the tables ready for whoever will analyze them. I started out building software and brought with me a love for building things and understanding how they work under the hood.",
+      "I work behind the scenes: I build search APIs for online stores, set up pipelines and get data ready for analysis. I started out building software and brought with me a love for building things and understanding how they work under the hood.",
     aboutP2:
-      "Away from the screen, I almost always have a physical book in hand, and yes, I read while walking down the street. The rest of my time goes to anime, Genshin Impact, Sorcery: Contested Realm and a good cappuccino (or tea) with chocolate.",
+      "Away from the screen, I always have a book in hand, watching anime, playing Genshin and enjoying a good cappuccino (or tea) with chocolate.",
     langsLabel: "Languages",
     langs: [
       { name: "Portuguese", level: "native" },
@@ -319,7 +318,7 @@ export const HOME: Record<Lang, HomeDict> = {
         kind: "College",
         shot: "project image",
         year: "2026",
-        title: "Measuring trees with drones",
+        title: "Thesis: Estimating dendrometric parameters from the tree crown",
         desc: "Thesis in progress: estimating tree size from drone imagery, using computer vision and machine learning.",
         longDesc: "Estimating tree dendrometric parameters through computational processing of drone-acquired orthomosaics.",
         tags: ["Computer vision", "Machine learning", "Photogrammetry"],

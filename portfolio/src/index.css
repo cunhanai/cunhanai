@@ -162,18 +162,24 @@
     /* cursores gerados a partir dos ícones do Font Awesome (src/lib/cursors.ts) */
     cursor: var(--cursor-default, auto);
   }
+  /* texto que dá para selecionar e copiar: cursor de texto neobrutalista (especificidade zero) */
+  :where(p, h1, h2, h3, h4, h5, h6, li, dt, dd, span, em, strong, small, label, code, pre, blockquote) {
+    cursor: var(--cursor-text, text);
+  }
+  /* dentro de links e botões, o texto continua com a mãozinha */
   a,
   button,
   summary,
   select,
   [role="button"],
   [role="menuitem"],
-  [role="option"] {
+  [role="option"],
+  :is(a, button, summary, [role="button"], [role="menuitem"], [role="option"]) * {
     cursor: var(--cursor-pointer, pointer);
   }
   textarea,
   input {
-    cursor: text;
+    cursor: var(--cursor-text, text);
   }
   a {
     @apply text-lilac no-underline;
@@ -191,7 +197,11 @@
     a,
     button,
     summary,
-    select {
+    select,
+    textarea,
+    input,
+    :where(p, h1, h2, h3, h4, h5, h6, li, dt, dd, span, em, strong, small, label, code, pre, blockquote),
+    :is(a, button, summary, [role="button"], [role="menuitem"], [role="option"]) * {
       cursor: auto;
     }
   }
