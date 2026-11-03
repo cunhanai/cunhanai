@@ -129,11 +129,11 @@ const STACK_ITEMS: [string, boolean][][] = [
 
 export const HOME: Record<Lang, HomeDict> = {
   pt: {
-    role: "Software Developer & Data Analyst",
+    role: "Data Engineer",
     heroLead1: "Código, dados e ",
     heroLead2: "diversão",
     heroSub:
-      "Oi, eu sou a Ana! Deixo os dados prontos para serem usados e, quando sobra tempo, construo ferramentas que ajudam no dia a dia.",
+      "Oi, eu sou a Ana! Construo pipelines que deixam os dados prontos para uso e, quando sobra tempo, crio ferramentas que ajudam no dia a dia.",
     ctaProjects: "Ver projetos",
     findMe: "Fale comigo",
     photoSlot: "foto — banner full-bleed",
@@ -251,11 +251,11 @@ export const HOME: Record<Lang, HomeDict> = {
     },
   },
   en: {
-    role: "Software Developer & Data Analyst",
+    role: "Data Engineer",
     heroLead1: "Code, data and ",
     heroLead2: "fun",
     heroSub:
-      "Hi, I'm Ana! I get data ready to be used and, when I have spare time, I build tools that make everyday life easier.",
+      "Hi, I'm Ana! I build pipelines that get data ready to use and, when I have spare time, I make tools that make everyday life easier.",
     ctaProjects: "View projects",
     findMe: "Get in touch",
     photoSlot: "photo — full-bleed banner",

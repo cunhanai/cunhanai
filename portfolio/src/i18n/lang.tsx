@@ -7,14 +7,14 @@ const STORAGE_KEY = "ajc-lang"
 // Título e descrição da página (sem dados estruturados: nada de endereço, empregador ou instituição).
 const META: Record<Lang, { title: string; description: string }> = {
   pt: {
-    title: "Ana Júlia da Cunha · Software Developer & Data Analyst",
+    title: "Ana Júlia da Cunha · Data Engineer",
     description:
-      "Oi, eu sou a Ana! Deixo os dados prontos para serem usados e, quando sobra tempo, construo ferramentas que ajudam no dia a dia.",
+      "Oi, eu sou a Ana! Construo pipelines que deixam os dados prontos para uso e, quando sobra tempo, crio ferramentas que ajudam no dia a dia.",
   },
   en: {
-    title: "Ana Júlia da Cunha · Software Developer & Data Analyst",
+    title: "Ana Júlia da Cunha · Data Engineer",
     description:
-      "Hi, I'm Ana! I get data ready to be used and, when I have spare time, I build tools that make everyday life easier.",
+      "Hi, I'm Ana! I build pipelines that get data ready to use and, when I have spare time, I make tools that make everyday life easier.",
   },
 }
 
